@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/match_match">
+
+    <LinearLayout style="@style/match_match">
+
+        <FrameLayout
+            style="@style/match_wrap"
+            android:layout_height="@dimen/dp_48"
+            android:layout_below="@id/sv_search">
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/sv_search"
+                style="@style/match_match"
+                android:paddingRight="24dp"
+                android:iconifiedByDefault="true"
+                app:defaultQueryHint="@string/country_tip"
+                />
+            <TextView
+                android:id="@+id/tv_tip"
+                style="@style/tv_user_gray_14"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="40dp"
+                android:text="@string/country_tip"/>
+        </FrameLayout>
+        <include
+            android:id="@+id/line"
+            layout="@layout/layout_common_line"
+            android:paddingRight="24dp"
+            />
+
+        <FrameLayout
+            style="@style/match_match"
+            android:layout_below="@id/sv_search">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcl_contacts"
+                style="@style/match_match"
+                android:layout_below="@+id/sv_search" />
+
+            <com.dysen.baselib.widgets.WaveSideBarView
+                android:id="@+id/side_bar"
+                style="@style/match_match"
+                android:paddingRight="16dp"
+                app:sidebar_lazy_respond="true"
+                app:sidebar_text_color="@color/colorAccent" />
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,68 @@
+<resources>
+    <!--公用度量值-->
+    <dimen name="appActionbarHeight">48dp</dimen>
+    <dimen name="appTabHeight">@dimen/appActionbarHeight</dimen>
+    <dimen name="appDoubleMargin">32dp</dimen>
+    <dimen name="appMainMargin">16dp</dimen>
+    <dimen name="appHalfMargin">8dp</dimen>
+    <dimen name="appMicroMargin">4dp</dimen>
+    <!--控件度量值-->
+    <dimen name="preferDrawablePadding">8dp</dimen>
+    <dimen name="preferEditTextHeight">48dp</dimen>
+    <dimen name="preferEditTextPadding">8dp</dimen>
+    <dimen name="preferButtonHeight">36dp</dimen>
+    <dimen name="preferButtonMinWidth">88dp</dimen>
+    <dimen name="preferImageButtonSize">48dp</dimen>
+    <dimen name="titleHorizontalMargin">12dp</dimen>
+    <dimen name="titleVerticalMargin">4dp</dimen>
+
+    <!--dp-->
+    <dimen name="w_0.1">0.1dp</dimen>
+    <dimen name="w_0.3">0.3dp</dimen>
+    <dimen name="w_0.5">0.5dp</dimen>
+    <dimen name="w_0.8">0.8dp</dimen>
+    <dimen name="w_0">0dp</dimen>
+    <dimen name="w_1">1dp</dimen>
+    <dimen name="w_2">2dp</dimen>
+    <dimen name="w_10">10dp</dimen>
+    <dimen name="w_20">20dp</dimen>
+    <dimen name="w_30">30dp</dimen>
+    <dimen name="w_40">40dp</dimen>
+
+    <dimen name="dp_4">4dp</dimen>
+    <dimen name="dp_8">8dp</dimen>
+    <dimen name="dp_16">16dp</dimen>
+    <dimen name="dp_24">24dp</dimen>
+    <dimen name="dp_32">32dp</dimen>
+    <dimen name="dp_40">40dp</dimen>
+    <dimen name="dp_48">48dp</dimen>
+    <dimen name="dp_64">64dp</dimen>
+    <dimen name="dp_96">96dp</dimen>
+    <dimen name="dp_128">128dp</dimen>
+    <dimen name="dp_160">160dp</dimen>
+    <dimen name="dp_180">180dp</dimen>
+    <dimen name="dp_250">250dp</dimen>
+    <!--sp-->
+    <dimen name="sp_4">4sp</dimen>
+    <dimen name="sp_6">6sp</dimen>
+    <dimen name="sp_8">8sp</dimen>
+    <dimen name="sp_10">10sp</dimen>
+    <dimen name="sp_12">12sp</dimen>
+    <dimen name="sp_14">14sp</dimen>
+    <dimen name="sp_16">16sp</dimen>
+    <dimen name="sp_18">18sp</dimen>
+    <dimen name="sp_20">20sp</dimen>
+    <dimen name="sp_22">22sp</dimen>
+    <dimen name="sp_24">24sp</dimen>
+    <dimen name="sp_26">26sp</dimen>
+    <dimen name="sp_30">30sp</dimen>
+
+    <!--custom radius-->
+    <dimen name="common_radius" >6dp</dimen>
+    <dimen name="radius_3">3dp</dimen>
+
+
+    <dimen name="gudieview_width">6dp</dimen>
+    <dimen name="gudieview_heigh">6dp</dimen>
+
+</resources>

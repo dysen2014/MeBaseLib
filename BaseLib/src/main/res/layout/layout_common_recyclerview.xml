@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/match_match"
+    android:layout_weight="1">
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/srl"
+        style="@style/match_match">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcl_contacts"
+                style="@style/match_match"
+                android:minHeight="100dp"
+                android:visibility="gone"
+                tools:itemCount="4"
+                />
+
+            <com.yanzhenjie.recyclerview.SwipeRecyclerView
+                android:id="@+id/rcl_contacts_swipe"
+                style="@style/match_match"
+                android:minHeight="100dp"
+                android:visibility="visible"
+                tools:itemCount="6" />
+
+            <com.dysen.baselib.widgets.EmptyLayout
+                android:id="@+id/empty_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </FrameLayout>
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+</LinearLayout>

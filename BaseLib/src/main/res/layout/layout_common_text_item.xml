@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/match_wrap"
+    android:layout_marginLeft="@dimen/dp_16">
+
+    <TextView
+        android:id="@+id/tv_name"
+        style="@style/tv_user_black2_14"
+        android:paddingTop="@dimen/dp_8"
+        android:paddingLeft="@dimen/dp_8"
+        android:paddingRight="@dimen/dp_8"
+        android:text="item"
+        tools:ignore="MissingConstraints" />
+
+    <include layout="@layout/layout_common_line_margin_8"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,0 +1,94 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/match_wrap">
+
+    <LinearLayout
+        style="@style/match_wrap"
+        android:layout_margin="@dimen/dp_16"
+        android:background="@drawable/ed_user_confirm"
+        android:paddingLeft="@dimen/dp_16"
+        android:paddingRight="@dimen/dp_16">
+
+        <RelativeLayout
+            style="@style/match_wrap"
+            android:background="@drawable/ed_user_confirm"
+            android:padding="@dimen/dp_8">
+
+            <TextView
+                android:id="@+id/txt_title"
+                style="@style/wrap_wrap"
+                android:layout_centerInParent="true"
+                android:text="温馨提示"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <View style="@style/view_line_v" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical">
+
+            <LinearLayout
+                style="@style/match_wrap"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_subTitle"
+                    style="@style/wrap_wrap"
+                    android:layout_centerInParent="true"
+                    android:text=""
+                    android:layout_margin="@dimen/dp_16"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold"
+                    android:visibility="gone"/>
+
+                <LinearLayout
+                    style="@style/match_wrap"
+                    android:minHeight="100dp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcl_contacts"
+                        style="@style/match_match"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_tip"
+                    style="@style/wrap_wrap"
+                    android:layout_centerInParent="true"
+                    android:text=""
+                    android:layout_margin="@dimen/dp_16"
+                    android:layout_gravity="right"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold"
+                    android:visibility="gone"/>
+
+                <LinearLayout
+                    style="@style/match_wrap_h"
+                    android:layout_marginTop="@dimen/w_20">
+
+                    <Button
+                        android:id="@+id/btn_no"
+                        style="@style/dialog_confirm_btn1"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:layout_marginRight="@dimen/dp_4"
+                        android:text="取消" />
+
+                    <Button
+                        android:id="@+id/btn_yes"
+                        style="@style/dialog_confirm_btn2"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:layout_marginRight="@dimen/dp_4"
+                        android:text="确认" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_16" />
+    </LinearLayout>
+</LinearLayout>

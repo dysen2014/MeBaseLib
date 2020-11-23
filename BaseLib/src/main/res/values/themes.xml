@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/darkwhite</item>
+
+        <item name="android:windowAnimationStyle">@style/activityAnimation</item>
+
+    </style>
+
+    <style name="AppTheme.ActionBarOverlay" parent="AppTheme">
+        <item name="windowActionBarOverlay">true</item>
+    </style>
+
+    <style name="AppToolBarThemeOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+    </style>
+
+
+    <style name="wx_theme" parent="AppTheme">
+
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+
+    </style>
+</resources>

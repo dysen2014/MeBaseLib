@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/match_wrap_v"
+    android:background="@color/colorPrimaryDark">
+
+    <LinearLayout
+        android:id="@+id/ll_title_bg"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/tv_back"
+            style="@style/common_txt_title2"
+            android:drawableLeft="@drawable/ic_back"
+            android:drawablePadding="@dimen/dp_4"
+            android:paddingLeft="@dimen/dp_16"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/common_txt_title2"
+            android:layout_weight="4"
+            android:text=""
+            android:textColor="@color/text_color_black2"
+            android:textSize="@dimen/sp_18" />
+
+        <TextView
+            android:id="@+id/tv_menu"
+            style="@style/common_txt_title2"
+            android:drawablePadding="@dimen/dp_4"
+            android:paddingRight="@dimen/sp_16"
+            android:text="" />
+    </LinearLayout>
+
+    <include android:id="@+id/view_line"
+        layout="@layout/layout_common_line" />
+</LinearLayout>

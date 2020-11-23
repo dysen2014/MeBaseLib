@@ -1,0 +1,363 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">基础库</string>
+    <string name="company_name">sendy</string>
+    <!--*******************************************************************-->
+    <!--*常用 -->
+    <!--*******************************************************************-->
+    <string name="tips">提示</string>
+    <string name="warning">警告</string>
+    <string name="attention">注意</string>
+    <string name="set">设置</string>
+    <string name="confirm">确认</string>
+    <string name="cancel">取消</string>
+    <string name="back">返回</string>
+    <string name="close">关闭</string>
+    <string name="quit">退出</string>
+    <string name="error">错误</string>
+    <string name="update">更新</string>
+    <string name="later">稍后</string>
+    <string name="delete">删除</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+    <string name="save">保存</string>
+    <string name="temporarilyNot">暂不</string>
+    <string name="loading">加载中&#8230;</string>-->
+    <string name="refreshing">刷新中&#8230;</string>
+    <string name="uploading">上传中&#8230;</string>
+    <string name="posting">提交中&#8230;</string>
+    <string name="postSuccess">提交成功</string>
+    <string name="downloading">正在下载&#8230;</string>
+    <string name="logining">登录中&#8230;</string>
+    <string name="appInfo">当前版本: <xliff:g id="1">%1$s</xliff:g> \n版权所有: </string>
+    <string name="moreClickQuit">再按一次, 退出程序</string>
+    <string name="confirmExit">确定退出吗?</string>
+    <string name="abortDataConfirm">当前数据还没有保存, 是否放弃已编辑的数据返回吗?</string>
+    <string name="noSelections">没有选中项&#8230;</string>
+    <string name="noMoreData">没有更多数据&#8230;</string>
+    <string name="noSdcardMounted">找不到储存卡</string>
+    <string name="login">登录</string>
+    <string name="register">注册</string>
+    <string name="noData">暂时没有数据</string>
+    <string name="refresh">点击我重试</string>
+    <string name="requestErrorPleaseRetry">请求出错, 请重试</string>
+
+    <!--*******************************************************************-->
+    <!--*更新 -->
+    <!--*******************************************************************-->
+    <string name="findNewVersion">发现新版本<xliff:g id="1">%1$s</xliff:g></string>
+    <string name="changeLog">更新内容:\n<xliff:g id="1">%1$s</xliff:g></string>
+    <string name="updatingApp">更新软件</string>
+    <string name="downloadFinishClickInstall">下载完毕, 点击安装</string>
+    <string name="downloadFailClickRetry">下载失败, 点击重试</string>
+    <string name="downloadProgress">正在下载<xliff:g id="1">%1$d</xliff:g>%%</string>
+    <string name="noSdcardMountedDownloadFail">找不到储存卡, 下载失败</string>
+    <string name="createFileFail">创建文件失败, 下载失败</string>
+
+
+    <!--*******************************************************************-->
+    <!--*下拉刷新的相关字符 -->
+    <!--*******************************************************************-->
+    <string name="app_pull_down">下拉</string>
+    <string name="app_pull_down_to_refresh">下拉刷新</string>
+    <string name="app_release_to_refresh">释放刷新</string>
+    <string name="app_refreshing">刷新中…</string>
+    <string name="app_refresh_complete">刷新完成.</string>
+    <string name="app_last_update">上次刷新:&#160;</string>
+    <string name="app_seconds_ago">&#160;秒前</string>
+    <string name="app_minutes_ago">&#160;分钟前</string>
+    <string name="app_hours_ago">&#160;小时前</string>
+
+
+    <!--*******************************************************************-->
+    <!--* 用户相关页面 -->
+    <!--*******************************************************************-->
+    <string name="phoneNum">手机号</string>
+    <string name="pleaseInputPassword">请输入密码</string>
+    <string name="pleaseInputCaptcha">请输入验证码</string>
+    <string name="forgetPassword">忘记密码?</string>
+    <string name="getCaptcha">获取验证码</string>
+    <string name="readAndAgree">阅读并同意</string>
+    <string name="userServiceProtocol">《用户服务协议》</string>
+    <string name="resetPassword">重置密码</string>
+    <string name="changePassword">修改密码</string>
+    <string name="pleaseInputOldPassword">请输入旧密码</string>
+    <string name="pleaseInputNewPassword">请输入新密码</string>
+    <string name="clickUploadHead">点击上传头像</string>
+    <string name="nickname">昵称</string>
+    <string name="plsInputNickname">请输入昵称</string>
+    <string name="gender">性别</string>
+    <string name="secrecy">保密</string>
+    <string name="birth">生日</string>
+    <string name="plsSelectBirth">请选择生日</string>
+    <string name="email">邮箱</string>
+    <string name="plsInputEmail">请输入邮箱</string>
+    <string name="verify">认证</string>
+    <string name="plsUploadIdCardToVerify">请上传身份证进行实名认证</string>
+    <string name="addHouseVerify">添加房产认证</string>
+    <string name="addHouse">添加房屋</string>
+    <string name="addCar">新增车辆</string>
+    <string name="owner">产权人</string>
+    <string name="_unread_">[未读]</string>
+    <string name="_bennRead_">[已读]</string>
+    <!--*******************************************************************-->
+    <!--* 主页相关 -->
+    <!--*******************************************************************-->
+    <string name="home">首页</string>
+    <string name="service">服务</string>
+    <string name="manager">管家</string>
+    <string name="activity">活动</string>
+    <string name="myParticipated">我参与的</string>
+    <string name="mine">我的</string>
+    <string name="cancelFloatWindow">取消悬浮</string>
+
+
+    <!--*******************************************************************-->
+    <!--* 首页 -->
+    <!--*******************************************************************-->
+    <string name="visitorInvite">访客邀请</string>
+    <string name="payParkingFee">停车收费</string>
+    <string name="propertyFee">物业缴费</string>
+    <string name="feeDetail">缴费详情</string>
+    <string name="repairRequest">报事报修</string>
+    <string name="propertyNotice">物业通知</string>
+    <string name="propertyNoticeSubTitle">· 每周物业服务动态一目了然</string>
+    <string name="communityActivity">社区活动</string>
+    <string name="communityActivitySubTitle">· 每周物业服务动态一目了然</string>
+    <string name="toSeeSee">去看看</string>
+    <string name="openDoor">开门</string>
+    <string name="setHomeUsualFunctions">设置首页常用功能</string>
+    <string name="plsDragIconToPosition">请拖到图标到相应位置</string>
+    <string name="loginOrRegister">登录 | 注册</string>
+    <string name="myMessage">我的消息</string>
+    <string name="personalBill">个人账单</string>
+    <string name="myActivity">我的活动</string>
+    <string name="myHouse">我的房屋</string>
+    <string name="myFamily">我的家人</string>
+    <string name="myCar">我的车辆</string>
+    <string name="noBind">无绑定</string>
+    <string name="noOrder">无账单</string>
+    <string name="personalInfo">个人资料</string>
+    <string name="accountSecurity">账户安全</string>
+    <string name="helpCenter">帮助中心</string>
+    <string name="clearCache">清理缓存</string>
+    <string name="appFeedback">意见反馈</string>
+    <string name="about">关于我们</string>
+    <string name="privacyPolicy">隐私政策</string>
+    <string name="userProtocol">用户协议</string>
+    <string name="logout">退出登录</string>
+
+    <!--*******************************************************************-->
+    <!--* 服务 -->
+    <!--*******************************************************************-->
+    <string name="villageNotice">小区公告</string>
+    <string name="noticeDetail">公告详情</string>
+    <string name="processing">处理中</string>
+    <string name="processed">已处理</string>
+    <string name="reportThingOrRepair">发起</string>
+    <string name="currentHouse">当前房产</string>
+    <string name="pleaseSelect">请选择</string>
+    <string name="pleaseInput">请录入</string>
+    <string name="repairType">反馈类型</string>
+    <string name="repairProblem">报修问题</string>
+    <string name="contact">联系人</string>
+    <string name="contactPhone">联系人手机</string>
+    <string name="plsInputopinionProblemDetail">请输入App使用问题或意见详情, 以便我们更好地处理</string>
+    <string name="plsInputProblemDetail">请输入问题详情, 以便我们更好地处理</string>
+    <string name="submit">提交</string>
+    <string name="pay">支付</string>
+    <string name="complaintAdvice">投诉建议</string>
+    <string name="electricalKey">电子钥匙</string>
+    <string name="keyPackage">钥匙包</string>
+    <string name="availableDevice">可用设备</string>
+    <string name="farawayDevice">设备不在附近</string>
+    <string name="temp_Invite">临时\n邀请</string>
+    <string name="temp_Car">临时\n邀请</string>
+    <string name="party_Invite">聚会\n邀请</string>
+    <string name="allow_Visit">授权\n访问</string>
+    <string name="enterPassword">门禁密码</string>
+    <string name="smsSend">短信发送</string>
+    <string name="wechatSend">微信发送</string>
+    <string name="carInvite">车辆来访</string>
+    <string name="visitorType">访客类型</string>
+    <string name="plateCode">车牌号</string>
+    <string name="plsInputPlateCode">请输入车牌号</string>
+    <string name="giveParkCoupon">赠送停车券</string>
+    <string name="visitHouseNum">拜访房号</string>
+    <string name="generateQrcode">生成二维码</string>
+    <string name="underway">进行中</string>
+    <string name="closed">已结束</string>
+    <string name="finished">已完成</string>
+    <string name="waitComment">待评价</string>
+    <string name="openDoorSetting">开门设定</string>
+    <string name="queryHouse">查询房产</string>
+    <string name="bindHouse">绑定房产</string>
+    <string name="registerPhone">登记手机</string>
+    <string name="community">小区</string>
+    <string name="building">楼栋</string>
+    <string name="unit">单元</string>
+    <string name="roomNo">房号</string>
+    <string name="authPhone">认证手机号</string>
+    <string name="authIdLast4Char">认证证件后四位</string>
+    <string name="pleaseSelectCommunity">请选择小区</string>
+    <string name="pleaseSelectBuilding">请选择楼栋</string>
+    <string name="pleaseSelectUnit">请选择单元</string>
+    <string name="pleaseSelectRoomNo">请选择房号</string>
+    <string name="pleaseInputAuthPhone">请填认证手机号</string>
+    <string name="pleaseInputAuthIdLast4Char">请填写认证证件号后四位</string>
+    <string name="pleaseSelectType">请选择类型</string>
+    <!--*******************************************************************-->
+    <!--* 我的 -->
+    <!--*******************************************************************-->
+    <string name="userAuthentication">身份认证</string>
+    <string name="carAuthentication">车辆认证</string>
+    <string name="houseAuthentication">产权认证</string>
+    <string name="userAuthenticationTips">拍摄您的二代身份证原件\n请确保图片清晰，四角完整</string>
+    <string name="onyUseToAuthenticationAndKeepInfoSafe">信息仅用于身份认证，xx保障您的信息安全</string>
+    <string name="carAuthenticationTips">拍摄您的证件\n请确保图片清晰，四角完整</string>
+    <string name="houseAuthenticationTips">拍摄您的证件\n请确保图片清晰，四角完整</string>
+    <string name="monthlyParkingFeeRenew">月卡车辆续费</string>
+    <string name="monthlyCardVehicle">月卡车辆</string>
+    <string name="effectiveData">有效日期</string>
+    <string name="renewStartTime">续费开始时间</string>
+    <string name="year">年</string>
+    <string name="month">月</string>
+    <string name="endTime">结束时间</string>
+    <string name="fee">费用</string>
+    <string name="payImmediately">立即缴费</string>
+    <string name="pleaseInputPlateCode">请输入车牌号</string>
+    <string name="pleaseInputPlateColor">请输入车辆颜色</string>
+    <string name="plateCode2">车牌号码</string>
+    <string name="plateColor">车辆颜色</string>
+    <string name="parkingTime">停车时长</string>
+    <string name="billType">账单类型</string>
+    <string name="enterTime">入场时间</string>
+    <string name="parkingFeePatTips">请在完成缴费30分钟内离场，超时将重新计算</string>
+    <string name="filter">筛选</string>
+    <string name="noCarToPayParkingFee">您目前暂无需缴费的车辆</string>
+    <string name="pleaseInviteVisitor">赶紧邀请您的朋友来做客吧</string>
+    <string name="billItem">收费项目</string>
+    <string name="billTime">计费时间</string>
+    <string name="billPayed">已缴费</string>
+    <string name="payed">已缴费</string>
+    <string name="notPayed">未缴费</string>
+    <string name="receivable">应收收款</string>
+    <string name="received">已收款</string>
+    <string name="payPropertyFee">缴物业费</string>
+    <string name="shouldPay">应该缴费</string>
+    <string name="arrearage">欠费本金</string>
+    <string name="lateFine">违约金</string>
+    <string name="shouldPayAmount">应缴费用</string>
+    <string name="deductionAmount">可抵扣金额数</string>
+    <string name="historyBill">历史账单</string>
+    <string name="selectCommunity">选择小区</string>
+    <string name="name">姓名</string>
+    <string name="idCard">身份证</string>
+    <string name="plsInputName">请输入姓名</string>
+    <string name="IdCodeLast4Letter">证件后4位</string>
+    <string name="plsInputIdCodeLast4Letter">请输入证件后四位</string>
+    <string name="plsInputPhone">请输入手机号</string>
+    <string name="detail">详情</string>
+    <string name="type">类型</string>
+    <string name="submitTime">提交时间</string>
+    <string name="content">内容</string>
+    <string name="generalComment">总体评价</string>
+    <string name="relativeSpeed">相应速度</string>
+    <string name="serviceAttitude">服务态度</string>
+    <string name="handleResult">处理结果</string>
+    <string name="waitYourComment">期待你的评价</string>
+    <string name="changeContact">修改联系人</string>
+    <string name="modify">修改</string>
+    <string name="viewPicture">查看图片</string>
+    <string name="operationConfirm">确认执行吗?</string>
+    <string name="code">编号</string>
+    <string name="house">房产</string>
+    <string name="skip">跳过</string>
+    <string name="iAmOwner">我是业主</string>
+    <string name="iAmFamily">我是家人</string>
+    <string name="iAmRenter">我是租客</string>
+    <string name="submitBinding">提交绑定</string>
+    <string name="houseBindingTitle">身份认证</string>
+    <string name="houseBindingTips">为了更好先后平台服务, 请进行身份认证</string>
+    <string name="iKnown">我知道了</string>
+    <string name="selectCharacter">选择身份</string>
+    <string name="activityDetail">活动详情</string>
+    <string name="iWantJoin">我要报名</string>
+    <string name="joinPersonName">报名联系人</string>
+    <string name="joinPersonPhone">联系电话</string>
+    <string name="otherDesc">其他说明</string>
+    <string name="addFamilyMember">增加家庭成员</string>
+    <string name="relationship">关系</string>
+    <string name="familyMember">家人</string>
+    <string name="renter">租客</string>
+    <string name="belongRoomNum">归属房号</string>
+    <string name="validDate">生效日期</string>
+    <string name="expirationDate">失效日期</string>
+    <string name="longTermValid">长期有效</string>
+    <string name="idCardUploadFront">证件-正面上传</string>
+    <string name="idCardUploadBack">证件-反面上传</string>
+    <string name="faceManage">人脸管理</string>
+    <string name="faceAuthorization">人脸门禁授权</string>
+    <string name="uploadFacePicture">上传人脸图片</string>
+    <string name="familyMemberInfo">家庭成员信息</string>
+    <string name="deleteFamily">删除家人</string>
+    <!--访客预约-->
+    <string name="visitorAppointment">访客邀请</string>
+    <string name="add_visitor_info">发起邀请</string>
+    <string name="add_visitor">新增访客</string>
+    <string name="add_visitor_name">姓名*</string>
+    <string name="add_visitor_sex">性别*</string>
+    <string name="add_phone_num">手机号*</string>
+    <string name="add_visitor_card_num">车牌号(选填)</string>
+    <string name="add_visitor_community">小区</string>
+    <string name="add_visitor_room_num">拜访房号*</string>
+    <string name="add_visitor_from_time">来访时间*</string>
+    <string name="add_visitor_to_time">离开时间*</string>
+    <string name="add_visitor_add_visitor_why">到访事由*</string>
+    <string name="add_visitor_delete_visitor">删除预约</string>
+    <string name="add_visitor_save_visitor">截图分享</string>
+    <string name="please_input">请输入</string>
+    <string name="please_select">请选择</string>
+    <string name="please_input_name">请输入2~10位真实姓名</string>
+    <string name="visitor_type">(%s)</string>
+    <string name="visitor_qr_tip">注：二维码在每台门禁有效次数只有4次。</string>
+    <string name="visitor_tip">1.来访客人可在小区门禁扫码通行。\n\n2.二维码在来访当天24小时内有效。\n\n3.二维码在每台门禁有效次数只有4次。\n\n4.可预约一周以内的来访登记。</string>
+    <string name="face_manage_tip">业主可以帮18岁以下及55岁以上的家人上传人脸照片！</string>
+
+
+    <string name="select_house_count">已选：%s 个房间</string>
+    <string name="select_car_count">已选：%s 个车位</string>
+
+
+    <string name="yjq">已缴清(%s户)</string>
+    <string name="yqj">有欠缴(%s户)</string>
+    <string name="kuanx">款项 %s</string>
+    <string name="hjje">合计：%s 元</string>
+    <string name="principal">本金：%s</string>
+    <string name="late_fee">滞纳金：%s</string>
+    <string name="exemption_review">减免审核中：%s</string>
+
+<!--AboutApp-->
+    <string name="to_rate">去评分</string>
+    <string name="version_record">版本记录</string>
+    <string name="new_version_update">版本更新</string>
+    <string name="copyright">路径物业版权所有</string>
+
+
+    <string name="user_fz">复制</string>
+    <string name="user_fzcg">复制成功</string>
+    <string name="user_zt">粘贴</string>
+    <string name="user_ztsb">无数据粘贴</string>
+
+
+    <string name="qr_code_recognition">二维码识别</string>
+    <string name="scan_tip">将二维码/条形码放入框内 ，即可自动扫描\n</string>
+
+    <string name="country_tip">（请输入您的国家查找区号，例：中国）</string>
+
+
+    <string name="share_save_success">保存成功</string>
+    <string name="share_save_failed">保存失败</string>
+    <string name="share_save">保存图片</string>
+
+
+</resources>

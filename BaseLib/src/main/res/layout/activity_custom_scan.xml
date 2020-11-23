@@ -1,0 +1,43 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/match_match">
+
+    <com.journeyapps.barcodescanner.DecoratedBarcodeView
+        android:id="@+id/dbv_custom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:zxing_framing_rect_height="@dimen/dp_250"
+        app:zxing_framing_rect_width="@dimen/dp_250"
+        app:zxing_preview_scaling_strategy="fitXY"
+        app:zxing_use_texture_view="true"
+        tools:ignore="ObsoleteLayoutParam" />
+
+    <LinearLayout
+        style="@style/match_wrap_bottom"
+        android:background="@color/transparent"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="@dimen/dp_32"
+            android:layout_height="@dimen/dp_32"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/tv_title"
+            android:text="@string/qr_code_recognition"
+            android:textColor="@color/text_color_white" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_flash_light"
+        android:layout_width="@dimen/dp_32"
+        android:layout_height="@dimen/dp_32"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="@dimen/dp_128"
+        android:onClick="switchFlashlight"
+        android:src="@drawable/btn_flash_on" />
+</FrameLayout>
