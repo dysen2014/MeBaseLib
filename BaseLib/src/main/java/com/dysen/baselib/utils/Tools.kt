@@ -9,9 +9,11 @@ import android.text.TextUtils
 import android.util.Log
 import android.view.Gravity
 import android.view.View
+import android.webkit.WebView
 import android.widget.*
 import androidx.annotation.NonNull
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatRadioButton
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -628,6 +630,27 @@ object Tools {
         EmptyLayout.refresh?.setOnClickListener {
             adapter?.setDatas(mValueList)
         }
+    }
+
+    fun showWebTip(aty: AppCompatActivity, title: String, url: String, btnName: String = "好的") {
+        showWebTip(aty, title, url, btnName, null)
+    }
+
+    fun showWebTip(aty: AppCompatActivity, title: String, url: String, btnName: String, rbnReadAndAgree: AppCompatRadioButton?) {
+        val dialog = CustomDialog.show(aty, R.layout.layout_common_webview) { dialog, v ->
+            val web = v?.findViewById(R.id.web) as WebView
+            val tvSubTitle = v?.findViewById<TextView>(R.id.tv_subTitle)
+            val btnOk = v?.findViewById<Button>(R.id.btn_ok)
+            tvSubTitle?.text = title
+            WebUtils.loadUrl(web, url)
+            btnOk?.text = btnName
+            btnOk?.setOnClickListener {
+                rbnReadAndAgree?.isChecked = true
+                dialog?.doDismiss()
+            }
+        }
+        dialog.isFullScreen = true
+        dialog.cancelable = false
     }
 
 }

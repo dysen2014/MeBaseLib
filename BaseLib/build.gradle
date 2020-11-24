@@ -131,4 +131,6 @@ dependencies {
     implementation 'cat.ereza:customactivityoncrash:2.2.0'
     //底部bottomBar
     implementation 'com.github.ittianyu:BottomNavigationViewEx:2.0.4'
+    //嵌套滑动布局    https://github.com/donkingliang/ConsecutiveScroller
+    implementation 'com.github.donkingliang:ConsecutiveScroller:2.6.2'
 }

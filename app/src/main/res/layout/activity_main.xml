@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.donkingliang.consecutivescroller.ConsecutiveScrollerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/match_match_v"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    app:isPermanent="true">
 <com.dysen.baselib.widgets.TitleLayout
     android:layout_width="match_parent"
     android:layout_height="@dimen/dp_48"/>
@@ -17,16 +18,31 @@
      app:left_src_width="24dp"
      app:left_text="leftText"
      app:right_text="rightText"
-     app:title="title"/>
+     app:title="title"
+     app:layout_isSticky="true"/>
 
  <include layout="@layout/layout_common_line_margin_8"/>
 
  <com.dysen.baselib.widgets.MeRecyclerView
      android:id="@+id/rcl_menu"
      android:layout_width="match_parent"
-     android:layout_height="match_parent"
+     android:layout_height="500dp"
      android:layout_weight="1"
      android:layout_marginRight="@dimen/dp_4"
-     android:visibility="visible"/>
+     app:layout_isConsecutive="false"
+     android:visibility="visible"
+     app:layout_isSticky="true"/>
+ <Space
+     android:layout_width="@dimen/w_0"
+     android:layout_height="@dimen/w_20"/>
+ <include layout="@layout/activity_coil_test"/>
+ <Space
+     android:layout_width="@dimen/w_0"
+     android:layout_height="@dimen/w_20"/>
+ <include layout="@layout/activity_country"/>
+ <Space
+     android:layout_width="@dimen/w_0"
+     android:layout_height="@dimen/w_20"/>
+ <include layout="@layout/activity_custom_scan"/>
 
-</LinearLayout>
+</com.donkingliang.consecutivescroller.ConsecutiveScrollerLayout>

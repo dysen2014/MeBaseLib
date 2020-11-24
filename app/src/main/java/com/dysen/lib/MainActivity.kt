@@ -7,6 +7,7 @@ import com.dysen.baselib.base.BaseActivity
 import com.dysen.baselib.common.base_recycler_adapter.CommonAdapte
 import com.dysen.baselib.common.base_recycler_adapter.SuperRecyclerAdapter
 import com.dysen.baselib.common.base_recycler_adapter.SuperRecyclerHolder
+import com.dysen.baselib.data.CacheUtil
 import com.dysen.baselib.data.Keys
 import com.dysen.baselib.data.entity.CountryData
 import com.dysen.baselib.model.LiveDataManager
@@ -68,7 +69,8 @@ class MainActivity : BaseActivity() {
                 it?.let {
                     if (it.isNotEmpty()) showTip("扫描的内容：${it}")
                 }
-                println("扫描的内容$mScanContent")
+                println("${CacheUtil.gString(Keys.SCAN_CONTENT)}扫描的内容$mScanContent")
+
 
             })
         LiveDataManager.instance?.with(Keys.COUNTRY_CODE, CountryData::class.java)
@@ -77,7 +79,7 @@ class MainActivity : BaseActivity() {
                     if (SharedPreUtils.en == AppContext.mSpUtils[SharedPreUtils.KEY_APP_LANGUAGE, SharedPreUtils.cn])
                         it?.shortNameEn else it?.shortName
 
-                showTip("选择的内容：${it.code}----$name")
+                showTip("${CacheUtil.gObj(Keys.COUNTRY_CODE, CountryData::class.java)?.name}选择的内容：${it.code}----$name")
             })
         initAdapter()
 
@@ -103,6 +105,7 @@ class MainActivity : BaseActivity() {
         })
         val srl = MeRecyclerView.smartRefreshLayout
         srl?.apply {
+            setEnableLoadMore(false)
             setOnRefreshListener {
                 mAdapter?.setDatas(menus)
                 ViewUtils.closeRefresh(this)

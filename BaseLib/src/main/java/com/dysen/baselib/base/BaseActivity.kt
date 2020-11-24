@@ -7,6 +7,7 @@ import android.view.Gravity
 import androidx.appcompat.app.AppCompatActivity
 import com.blankj.utilcode.util.ToastUtils
 import com.dysen.baselib.R
+import com.dysen.baselib.data.CacheUtil
 import com.dysen.baselib.data.Keys
 import com.dysen.baselib.model.LiveDataManager
 import com.dysen.baselib.ui.scan.CustomScanActivity
@@ -92,6 +93,7 @@ abstract class BaseActivity : AppActivity() {
             println("把扫描到的内容通知观察者$mScanContent")
             //把扫描到的内容通知观察者
             LiveDataManager.instance?.with(Keys.SCAN_CONTENT, String::class.java)?.postValue(mScanContent)
+            CacheUtil.sString(Keys.SCAN_CONTENT, mScanContent)
         } else {
             super.onActivityResult(requestCode, resultCode, data)
         }

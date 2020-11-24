@@ -13,6 +13,7 @@ import com.dysen.baselib.base.AppContext
 import com.dysen.baselib.base.BaseActivity
 import com.dysen.baselib.common.base_recycler_adapter.SuperRecyclerAdapter
 import com.dysen.baselib.common.base_recycler_adapter.SuperRecyclerHolder
+import com.dysen.baselib.data.CacheUtil
 import com.dysen.baselib.data.Keys
 import com.dysen.baselib.data.entity.CountryData
 import com.dysen.baselib.model.LiveDataManager
@@ -113,6 +114,8 @@ class CountryActivity : BaseActivity() {
                             //把选择的内容通知观察者
                             LiveDataManager.instance?.with(Keys.COUNTRY_CODE, CountryData::class.java)
                                 ?.postValue(country)
+                            CacheUtil.sObj(Keys.COUNTRY_CODE, country)
+
                             finish()
                         })
 

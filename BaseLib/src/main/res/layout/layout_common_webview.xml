@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:gravity="center_vertical">
+
+    <androidx.cardview.widget.CardView style="@style/card">
+
+        <LinearLayout
+            style="@style/match_wrap"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_subTitle"
+                style="@style/tv_user_black2_14"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/dp_24"
+                android:gravity="center"
+                android:text=""
+                android:visibility="visible" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:minHeight="400dp">
+
+                <WebView
+                    android:id="@+id/web"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </ScrollView>
+
+
+            <Button
+                android:id="@+id/btn_ok"
+                style="@style/btn_submit"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginBottom="@dimen/dp_16"
+                android:text="确认"
+                android:textColor="@color/text_color_white" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
