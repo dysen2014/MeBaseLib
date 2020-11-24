@@ -76,7 +76,7 @@ object Tools {
     fun isFastDoubleClick(distance: Long): Boolean {
         val time = System.currentTimeMillis()
         val timeD: Long = time - lastClickTime
-        if (0 < timeD && timeD < distance.toLong()) {
+        if (timeD in 1 until distance) {
             return true
         }
         lastClickTime = time

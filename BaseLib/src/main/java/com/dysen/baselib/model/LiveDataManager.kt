@@ -12,6 +12,13 @@ import java.util.*
 open class LiveDataManager private constructor() {
     //应用中所有数据持有类的集合
     private val map: MutableMap<String, GLiveData<Any>?>
+    fun <T> with(key: String): GLiveData<T>? {
+        if (!map.containsKey(key)) {
+            map[key] = GLiveData()
+        }
+        return map[key] as GLiveData<T>?
+    }
+
     fun <T> with(key: String, clazz: Class<T>?): GLiveData<T>? {
         if (!map.containsKey(key)) {
             map[key] = GLiveData()

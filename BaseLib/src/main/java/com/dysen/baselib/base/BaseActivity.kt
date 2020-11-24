@@ -92,7 +92,7 @@ abstract class BaseActivity : AppActivity() {
             }
             println("把扫描到的内容通知观察者$mScanContent")
             //把扫描到的内容通知观察者
-            LiveDataManager.instance?.with(Keys.SCAN_CONTENT, String::class.java)?.postValue(mScanContent)
+            LiveDataManager.instance?.with<String>(Keys.SCAN_CONTENT)?.postValue(mScanContent)
             CacheUtil.sString(Keys.SCAN_CONTENT, mScanContent)
         } else {
             super.onActivityResult(requestCode, resultCode, data)
