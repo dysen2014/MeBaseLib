@@ -1,6 +1,7 @@
 package com.dysen.baselib.common.base_recycler_adapter
 
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import com.dysen.baselib.R
 import com.dysen.baselib.utils.Tools
 import com.dysen.baselib.widgets.MeRecyclerView
@@ -30,11 +31,16 @@ abstract class CommonAdapte<T> : SuperRecyclerAdapter<T> {
         super.setDatas(items)
     }
 
-    open fun layoutResId(layoutResId:Int):Int {
+    override fun onBindViewHolder(holder: SuperRecyclerHolder, position: Int) {
+        holder.itemView.startAnimation(AnimationUtils.loadAnimation(holder.context, R.anim.trans_scale_alpha))
+
+        super.onBindViewHolder(holder, position)
+    }
+    open fun layoutResId(layoutResId: Int):Int {
         return if (mValueList.isEmpty()) R.layout.layout_common_empty else layoutResId
     }
 
-    open fun<T> refreshList(mValueList: MutableList<T>?){
+    open fun <T> refreshList(mValueList: MutableList<T>?){
         Tools.setIsVisible(MeRecyclerView.emptyLayout, mValueList?.isEmpty() ?: true)
         Tools.setIsVisible(MeRecyclerView.swipeRecyclerView, mValueList?.isNotEmpty() ?: false)
 //        MeRecyclerView.emptyRefresh?.setOnClickListener {
