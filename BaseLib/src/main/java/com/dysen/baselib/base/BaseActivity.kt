@@ -68,7 +68,7 @@ abstract class BaseActivity : AppActivity() {
             val bgColor = Tools.gColor(if (it) R.color.text_color_green else R.color.text_color_gray2)
             val msgColor = Tools.gColor(if (it) R.color.text_color_white else R.color.text_color_black2)
             lightMode = it
-            nightMode(it)
+            nightMode(it,"#7e000000")
         })
     }
 
