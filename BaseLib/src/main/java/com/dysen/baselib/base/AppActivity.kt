@@ -9,6 +9,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.blankj.utilcode.util.ToastUtils
 import com.dysen.baselib.R
 import com.dysen.baselib.utils.NetUtils
 import com.dysen.baselib.utils.Tools.obtainNoNullText
@@ -36,6 +37,7 @@ open class AppActivity : AppCompatActivity() {
         intent.putExtra("data", bundle)
         startActivity(intent)
     }
+
     protected fun transAty4Result(cls: Class<*>?) {
         val intent = Intent(this, cls)
         startActivityForResult(intent, RESULT_OK)
@@ -62,15 +64,19 @@ open class AppActivity : AppCompatActivity() {
     fun setVisible(view: View?) {
         view?.visibility = View.VISIBLE
     }
+
     fun setIsVisible(view: View?) {
         setIsVisible(view, false)
     }
+
     fun setIsVisible(view: View?, flag: Boolean = false) {
         view?.visibility = if (flag) View.VISIBLE else View.GONE
     }
+
     fun setIsInVisible(view: View?) {
         setIsInVisible(view, false)
     }
+
     fun setIsInVisible(view: View?, flag: Boolean = false) {
         view?.visibility = if (flag) View.VISIBLE else View.INVISIBLE
     }
@@ -94,6 +100,7 @@ open class AppActivity : AppCompatActivity() {
         textView.text = obtainNoNullText(content, "")
         return this
     }
+
     protected fun sText(textView: EditText, content: String? = defaultContent): AppActivity {
         if (isNull(textView)) {
             return this
@@ -117,6 +124,7 @@ open class AppActivity : AppCompatActivity() {
         textView.textSize = size
         return this
     }
+
     protected fun sHintText(textView: TextView, content: String?): AppActivity {
         if (isNull(textView)) {
             return this
@@ -146,9 +154,19 @@ open class AppActivity : AppCompatActivity() {
     }
 
     fun showTip(str: String) {
-        val makeText = Toast.makeText(this, str, Toast.LENGTH_LONG)
+        var makeText = Toast.makeText(this, str, Toast.LENGTH_LONG)
+        makeText.setText(str)
+        makeText.duration = Toast.LENGTH_SHORT
         makeText.setGravity(Gravity.CENTER, 0, 0)
         makeText.show()
+//        showTip(str, Toast.LENGTH_SHORT)
+    }
+
+    fun showTip(str: String, duration: Int) {
+        if (duration == 1)
+            ToastUtils.showLong(str)
+        else
+            ToastUtils.showShort(str)
     }
 
     fun showTipInput(str: String) {
@@ -158,6 +176,7 @@ open class AppActivity : AppCompatActivity() {
     fun showTipSelect(str: String) {
         showTip("请选择${str}")
     }
+
     fun showTipInput(str: String, endStr: String = "") {
         showTip("请输入${str}${endStr}")
     }

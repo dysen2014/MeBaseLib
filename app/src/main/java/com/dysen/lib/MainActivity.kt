@@ -1,11 +1,11 @@
 package com.dysen.lib
 
 import android.os.Bundle
+import android.widget.LinearLayout
 import androidx.lifecycle.Observer
 import com.dysen.baselib.base.AppContext
 import com.dysen.baselib.base.BaseActivity
 import com.dysen.baselib.common.base_recycler_adapter.CommonAdapte
-import com.dysen.baselib.common.base_recycler_adapter.SuperRecyclerAdapter
 import com.dysen.baselib.common.base_recycler_adapter.SuperRecyclerHolder
 import com.dysen.baselib.data.CacheUtil
 import com.dysen.baselib.data.Keys
@@ -16,15 +16,17 @@ import com.dysen.baselib.ui.scan.CustomScanActivity
 import com.dysen.baselib.utils.BitmapUtils
 import com.dysen.baselib.utils.SharedPreUtils
 import com.dysen.baselib.utils.Tools
+import com.dysen.baselib.utils.nightMode
 import com.dysen.baselib.widgets.MeRecyclerView
 import com.dysen.baselib.widgets.TitleLayout
 import com.dysen.common.base_recycler_adapter.ViewUtils
 import com.dysen.lib.coil_test.CoilTestActivity
 import com.google.android.flexbox.FlexboxLayoutManager
 import com.kingja.loadsir.core.LoadService
+import com.kongzue.dialog.util.BaseDialog
+import com.kongzue.dialog.util.DialogSettings
+import com.kongzue.dialog.v3.MessageDialog
 import com.me.optionbarview.OptionBarView
-import com.yanzhenjie.recyclerview.OnItemMenuClickListener
-import com.yanzhenjie.recyclerview.SwipeMenuBridge
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
@@ -64,6 +66,7 @@ class MainActivity : BaseActivity() {
 //        }
 
         TitleLayout.title?.text = "测试"
+        TitleLayout.rightText?.text = "三"
         LiveDataManager.instance?.with(Keys.SCAN_CONTENT, String::class.java)
             ?.observer(this, Observer {
                 it?.let {
@@ -87,6 +90,21 @@ class MainActivity : BaseActivity() {
     }
 
     private fun initClick() {
+
+        TitleLayout.rightText?.setOnClickListener {
+
+            val messageDialog= MessageDialog.build(this).setTitle("提示").setMessage("选择显示模式").setOkButton("夜间模式").setCancelButton("日间模式").setOtherButton("取消")
+                    .setTheme(if (lightMode)DialogSettings.THEME.DARK else DialogSettings.THEME.LIGHT)
+                messageDialog.show()
+//                MessageDialog.show(this, "提示", "选择显示模式", "夜间模式", "日间模式", "取消")
+                messageDialog.setButtonOrientation(LinearLayout.VERTICAL).setOnOkButtonClickListener { _, v ->
+                    setNightMode(true)
+                    false
+                }.setOnCancelButtonClickListener { _, v ->
+                    setNightMode(false)
+                    false
+                }
+        }
         //区域分割 响应区域点击事件
         opv.splitMode = true
         opv.setOnOptionItemClickListener(object : OptionBarView.OnOptionItemClickListener {

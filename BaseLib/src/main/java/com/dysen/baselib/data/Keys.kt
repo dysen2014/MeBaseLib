@@ -10,4 +10,5 @@ object Keys {
 
     const val SCAN_CONTENT = "scan_content"
     const val COUNTRY_CODE = "country_code"
+    const val NIGHT_MODE = "night_mode"
 }

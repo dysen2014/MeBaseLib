@@ -47,6 +47,8 @@ dependencies {
 
     implementation project(path: ':BaseLib')
 
+    //dialog
+    implementation 'com.kongzue.dialog_v3x:dialog:3.2.3'
     //MeWidgets
     implementation 'com.github.dysen2014:MeWidgets:0.0.1'
     //coil

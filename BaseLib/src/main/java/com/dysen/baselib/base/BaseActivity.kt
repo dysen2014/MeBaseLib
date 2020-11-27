@@ -4,8 +4,11 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.Gravity
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import com.blankj.utilcode.util.ToastUtils
+import com.blankj.utilcode.util.ToastUtils.setBgColor
 import com.dysen.baselib.R
 import com.dysen.baselib.data.CacheUtil
 import com.dysen.baselib.data.Keys
@@ -13,7 +16,10 @@ import com.dysen.baselib.model.LiveDataManager
 import com.dysen.baselib.ui.scan.CustomScanActivity
 import com.dysen.baselib.utils.StatusBarUtil
 import com.dysen.baselib.utils.Tools
+import com.dysen.baselib.utils.nightMode
 import com.google.zxing.integration.android.IntentIntegrator
+import com.kongzue.dialog.util.BaseDialog
+import com.kongzue.dialog.v3.MessageDialog
 import com.kongzue.dialog.v3.TipDialog
 
 /**
@@ -23,9 +29,11 @@ import com.kongzue.dialog.v3.TipDialog
  * Info：
  */
 abstract class BaseActivity : AppActivity() {
-    protected var mScanContent: String=""
+    protected var mScanContent: String = ""
 
     lateinit var tipDialog: TipDialog
+    var lightMode: Boolean = false
+
 
     companion object {
         fun newInstance(
@@ -48,9 +56,24 @@ abstract class BaseActivity : AppActivity() {
 
         //透明状态栏
         StatusBarUtil.setTransparent(this)
+
         ToastUtils.setGravity(Gravity.CENTER, 0, 0)
 
         initView(savedInstanceState)
+        initData()
+    }
+
+    private fun initData() {
+        LiveDataManager.instance?.with<Boolean>(Keys.NIGHT_MODE)?.observer(this, {
+            val bgColor = Tools.gColor(if (it) R.color.text_color_green else R.color.text_color_gray2)
+            val msgColor = Tools.gColor(if (it) R.color.text_color_white else R.color.text_color_black2)
+            lightMode = it
+            nightMode(it)
+        })
+    }
+
+    fun setNightMode(nightOff: Boolean) {
+        LiveDataManager.instance?.with<Boolean>(Keys.NIGHT_MODE)?.postValue(nightOff)
     }
 
     abstract fun layoutId(): Int
