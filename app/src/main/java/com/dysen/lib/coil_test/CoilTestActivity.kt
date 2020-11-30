@@ -19,7 +19,7 @@ class CoilTestActivity : BaseActivity() {
 
     override fun initView(savedInstanceState: Bundle?) {
 //        val imgUrl = "https://cdn.pixabay.com/photo/2020/06/14/22/31/the-caucasus-5299599__480.jpg"
-        tvCoil.text = "wow failed"
+        tvCoil.text = "Coil Test"
         tvCoil.isAllCaps = false
 
 //        val imgUrl = "https://cdn.pixabay.com/photo/2020/10/17/11/55/elephants-5661842_1280.jpg"

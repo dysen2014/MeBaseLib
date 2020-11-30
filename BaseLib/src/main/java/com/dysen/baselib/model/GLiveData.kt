@@ -109,8 +109,8 @@ open class GLiveData<T> {
 
     fun remove(lifecycle: Lifecycle) {
         mObservers.forEach {
-        println(" lifecycle= ${it.lifecycle} = ${it.lifecycle == lifecycle}")
-            if (it.lifecycle == lifecycle){
+            println(" lifecycle= ${it.lifecycle} = ${it.lifecycle == lifecycle}")
+            if (it.lifecycle == lifecycle) {
                 it.myLifecycleBound?.let { t -> it.lifecycle?.removeObserver(t) }
                 mObservers.remove(it)
             }
