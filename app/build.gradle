@@ -5,6 +5,10 @@ plugins {
     id 'kotlin-kapt'
 }
 
+static def releaseTime() {  //获取时间的方法,在Android节点外,另外的节点
+    return new Date().format("yyyy-MM-dd-HH-mm", TimeZone.getDefault())
+}
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
@@ -17,6 +21,18 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+
+        //配置自定义打包名称
+        android.applicationVariants.all {
+            variant ->
+                variant.outputs.all {
+                    outputFileName = "Me-${variant.name}-${variant.versionName}_${releaseTime()}.apk"
+                }
+        }
     }
 
     buildTypes {
