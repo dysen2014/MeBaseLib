@@ -35,6 +35,16 @@ android {
         }
     }
 
+    signingConfigs {
+        signing {
+//            storeFile file('/Users/dysen/Desktop/sendy/dysen.jks')
+            storeFile file('../dysen.jks')
+            keyAlias 'dysen'
+            keyPassword 'dy1211'
+            storePassword 'dy1211'
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
