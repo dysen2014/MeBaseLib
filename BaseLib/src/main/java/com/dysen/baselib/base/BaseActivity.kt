@@ -4,11 +4,8 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.Gravity
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import com.blankj.utilcode.util.ToastUtils
-import com.blankj.utilcode.util.ToastUtils.setBgColor
 import com.dysen.baselib.R
 import com.dysen.baselib.data.CacheUtil
 import com.dysen.baselib.data.Keys
@@ -18,8 +15,6 @@ import com.dysen.baselib.utils.StatusBarUtil
 import com.dysen.baselib.utils.Tools
 import com.dysen.baselib.utils.nightMode
 import com.google.zxing.integration.android.IntentIntegrator
-import com.kongzue.dialog.util.BaseDialog
-import com.kongzue.dialog.v3.MessageDialog
 import com.kongzue.dialog.v3.TipDialog
 
 /**

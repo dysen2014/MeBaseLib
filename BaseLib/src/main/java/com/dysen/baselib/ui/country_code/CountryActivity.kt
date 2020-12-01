@@ -112,7 +112,7 @@ class CountryActivity : BaseActivity() {
                         setOnItemClickListenner(View.OnClickListener {
 
                             //把选择的内容通知观察者
-                            LiveDataManager.instance?.with(Keys.COUNTRY_CODE, CountryData::class.java)
+                            LiveDataManager.instance?.with<CountryData>(Keys.COUNTRY_CODE)
                                 ?.postValue(country)
                             CacheUtil.sObj(Keys.COUNTRY_CODE, country)
 

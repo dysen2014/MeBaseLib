@@ -67,22 +67,20 @@ class MainActivity : BaseActivity() {
 
         TitleLayout.title?.text = "测试"
         TitleLayout.rightText?.text = "三"
-        LiveDataManager.instance?.with(Keys.SCAN_CONTENT, String::class.java)
+        LiveDataManager.instance?.with<String>(Keys.SCAN_CONTENT)
             ?.observer(this, Observer {
                 it?.let {
                     if (it.isNotEmpty()) showTip("扫描的内容：${it}")
                 }
-                println("${CacheUtil.gString(Keys.SCAN_CONTENT)}扫描的内容$mScanContent")
-
-
+                println("${CacheUtil.gString(Keys.SCAN_CONTENT)} 扫描的内容 $mScanContent")
             })
-        LiveDataManager.instance?.with(Keys.COUNTRY_CODE, CountryData::class.java)
+        LiveDataManager.instance?.with<CountryData>(Keys.COUNTRY_CODE)
             ?.observer(this, Observer {
                 var name =
                     if (SharedPreUtils.en == AppContext.mSpUtils[SharedPreUtils.KEY_APP_LANGUAGE, SharedPreUtils.cn])
                         it?.shortNameEn else it?.shortName
 
-                showTip("${CacheUtil.gObj(Keys.COUNTRY_CODE, CountryData::class.java)?.name}选择的内容：${it.code}----$name")
+                showTip("${CacheUtil.gObj(Keys.COUNTRY_CODE, CountryData::class.java)?.name} 选择的内容：${it.code}----$name")
             })
         initAdapter()
 
@@ -93,17 +91,17 @@ class MainActivity : BaseActivity() {
 
         TitleLayout.rightText?.setOnClickListener {
 
-            val messageDialog= MessageDialog.build(this).setTitle("提示").setMessage("选择显示模式").setOkButton("夜间模式").setCancelButton("日间模式").setOtherButton("取消")
-                    .setTheme(if (lightMode)DialogSettings.THEME.DARK else DialogSettings.THEME.LIGHT)
-                messageDialog.show()
+            val messageDialog = MessageDialog.build(this).setTitle("提示").setMessage("选择显示模式").setOkButton("夜间模式").setCancelButton("日间模式").setOtherButton("取消")
+                .setTheme(if (lightMode) DialogSettings.THEME.DARK else DialogSettings.THEME.LIGHT)
+            messageDialog.show()
 //                MessageDialog.show(this, "提示", "选择显示模式", "夜间模式", "日间模式", "取消")
-                messageDialog.setButtonOrientation(LinearLayout.VERTICAL).setOnOkButtonClickListener { _, v ->
-                    setNightMode(true)
-                    false
-                }.setOnCancelButtonClickListener { _, v ->
-                    setNightMode(false)
-                    false
-                }
+            messageDialog.setButtonOrientation(LinearLayout.VERTICAL).setOnOkButtonClickListener { _, v ->
+                setNightMode(true)
+                false
+            }.setOnCancelButtonClickListener { _, v ->
+                setNightMode(false)
+                false
+            }
         }
         //区域分割 响应区域点击事件
         opv.splitMode = true
@@ -145,9 +143,12 @@ class MainActivity : BaseActivity() {
                         opv.setLeftImage(BitmapUtils.getResBitmap(this@MainActivity, R.mipmap.ic_common_empty))
                     }
                     setOnItemClickListenner {
-                        if (menus.size == clzzs.size)
-                            newInstance(this@MainActivity, clzzs[position])
-                        else
+                        if (menus.size == clzzs.size) {
+                            if (position == 1 || t == "扫一扫")
+                                customScan(this@MainActivity)
+                            else
+                                newInstance(this@MainActivity, clzzs[position])
+                        } else
                             showLoading("请保证菜单和页面个数对应！")
                     }
                 }
