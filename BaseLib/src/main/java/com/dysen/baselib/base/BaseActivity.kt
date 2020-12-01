@@ -24,6 +24,8 @@ import com.kongzue.dialog.v3.TipDialog
  * Info：
  */
 abstract class BaseActivity : AppActivity() {
+    protected val TAG = this.javaClass.name
+
     protected var mScanContent: String = ""
 
     lateinit var tipDialog: TipDialog

@@ -21,6 +21,7 @@ import com.dysen.baselib.widgets.MeRecyclerView
 import com.dysen.baselib.widgets.TitleLayout
 import com.dysen.common.base_recycler_adapter.ViewUtils
 import com.dysen.lib.coil_test.CoilTestActivity
+import com.dysen.lib.room_test.RoomTestActy
 import com.google.android.flexbox.FlexboxLayoutManager
 import com.kingja.loadsir.core.LoadService
 import com.kongzue.dialog.util.BaseDialog
@@ -36,8 +37,8 @@ class MainActivity : BaseActivity() {
     private lateinit var mAdapter: CommonAdapte<String>
 
     private var menus =
-        mutableListOf("Coil", "扫一扫", "CountryCode")
-    private var clzzs = mutableListOf<Class<*>>(CoilTestActivity::class.java, CustomScanActivity::class.java, CountryActivity::class.java)
+        mutableListOf("Coil", "扫一扫", "CountryCode", "RoomTest")
+    private var clzzs = mutableListOf<Class<*>>(CoilTestActivity::class.java, CustomScanActivity::class.java, CountryActivity::class.java, RoomTestActy::class.java)
 
     override fun layoutId(): Int {
         return R.layout.activity_main
