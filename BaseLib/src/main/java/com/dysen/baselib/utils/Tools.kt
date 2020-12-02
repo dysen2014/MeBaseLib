@@ -21,7 +21,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.blankj.utilcode.util.ToastUtils
 import com.dysen.baselib.R
 import com.dysen.baselib.base.AppContext
-import com.dysen.baselib.common.base_recycler_adapter.CommonAdapte
+import com.dysen.baselib.common.base_recycler_adapter.MeAdapter
 import com.dysen.baselib.widgets.*
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.EncodeHintType
@@ -624,7 +624,7 @@ object Tools {
 
 
 
-    open fun<T> refreshNoList(mValueList: MutableList<T>, adapter: CommonAdapte<T>?){
+    open fun<T> refreshNoList(mValueList: MutableList<T>, adapter: MeAdapter<T>?){
             setIsVisible(MeRecyclerViewNoRefresh.emptyLayout, mValueList.isEmpty())
             setIsVisible(MeRecyclerViewNoRefresh.swipeRecyclerView, mValueList.isNotEmpty())
         EmptyLayout.refresh?.setOnClickListener {

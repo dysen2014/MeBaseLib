@@ -10,7 +10,7 @@ import com.yanzhenjie.recyclerview.SwipeMenu
 import com.yanzhenjie.recyclerview.SwipeMenuCreator
 import com.yanzhenjie.recyclerview.SwipeMenuItem
 
-abstract class CommonAdapte<T> : SuperRecyclerAdapter<T> {
+abstract class MeAdapter<T> : SuperRecyclerAdapter<T> {
 
     private var layoutResId: Int = 0
     private var mValueList: MutableList<T> = mutableListOf()

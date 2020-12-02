@@ -5,7 +5,7 @@ import android.widget.LinearLayout
 import androidx.lifecycle.Observer
 import com.dysen.baselib.base.AppContext
 import com.dysen.baselib.base.BaseActivity
-import com.dysen.baselib.common.base_recycler_adapter.CommonAdapte
+import com.dysen.baselib.common.base_recycler_adapter.MeAdapter
 import com.dysen.baselib.common.base_recycler_adapter.SuperRecyclerHolder
 import com.dysen.baselib.data.CacheUtil
 import com.dysen.baselib.data.Keys
@@ -34,7 +34,7 @@ class MainActivity : BaseActivity() {
 
     //界面状态管理者
     private lateinit var loadsirService: LoadService<Any>
-    private lateinit var mAdapter: CommonAdapte<String>
+    private lateinit var mAdapter: MeAdapter<String>
 
     private var menus =
         mutableListOf("Coil", "扫一扫", "CountryCode", "RoomTest")
@@ -132,7 +132,7 @@ class MainActivity : BaseActivity() {
 
     private fun initAdapter() {
 
-        mAdapter = object : CommonAdapte<String>(R.layout.layout_common_item) {
+        mAdapter = object : MeAdapter<String>(R.layout.layout_common_item) {
             override fun convert(holder: SuperRecyclerHolder?, t: String?, layoutType: Int, position: Int) {
                 super.convert(holder, t, layoutType, position)
                 holder?.apply {
