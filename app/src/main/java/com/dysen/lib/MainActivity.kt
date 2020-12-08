@@ -13,10 +13,7 @@ import com.dysen.baselib.data.entity.CountryData
 import com.dysen.baselib.model.LiveDataManager
 import com.dysen.baselib.ui.country_code.CountryActivity
 import com.dysen.baselib.ui.scan.CustomScanActivity
-import com.dysen.baselib.utils.BitmapUtils
-import com.dysen.baselib.utils.SharedPreUtils
-import com.dysen.baselib.utils.Tools
-import com.dysen.baselib.utils.nightMode
+import com.dysen.baselib.utils.*
 import com.dysen.baselib.widgets.MeRecyclerView
 import com.dysen.baselib.widgets.TitleLayout
 import com.dysen.common.base_recycler_adapter.ViewUtils
@@ -65,6 +62,9 @@ class MainActivity : BaseActivity() {
 //            menus.addAll(menus)
 //            mAdapter.setDatas(menus)
 //        }
+
+        WebUtils.loadUrl(web, "https://wy.kcloudchina.com/app-h5/yzapp/#/userService")
+        Tools.showWebTip(this, "用户协议", "https://wy.kcloudchina.com/app-h5/yzapp/#/userService", "我已阅读并同意")
 
         TitleLayout.title?.text = "测试"
         TitleLayout.rightText?.text = "三"

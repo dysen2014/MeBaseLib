@@ -638,9 +638,9 @@ object Tools {
 
     fun showWebTip(aty: AppCompatActivity, title: String, url: String, btnName: String, rbnReadAndAgree: AppCompatRadioButton?) {
         val dialog = CustomDialog.show(aty, R.layout.layout_common_webview) { dialog, v ->
-            val web = v?.findViewById(R.id.web) as WebView
-            val tvSubTitle = v?.findViewById<TextView>(R.id.tv_subTitle)
-            val btnOk = v?.findViewById<Button>(R.id.btn_ok)
+            val web = v.findViewById(R.id.web) as WebView
+            val tvSubTitle = v.findViewById<TextView>(R.id.tv_subTitle)
+            val btnOk = v.findViewById<Button>(R.id.btn_ok)
             tvSubTitle?.text = title
             WebUtils.loadUrl(web, url)
             btnOk?.text = btnName

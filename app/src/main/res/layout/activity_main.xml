@@ -45,4 +45,13 @@
      android:layout_height="@dimen/w_20"/>
  <include layout="@layout/activity_custom_scan"/>
 
+ <Space
+     android:layout_width="@dimen/w_0"
+     android:layout_height="@dimen/w_20"/>
+
+ <WebView
+     android:id="@+id/web"
+     android:layout_width="match_parent"
+     android:layout_height="300dp"/>
+
 </com.donkingliang.consecutivescroller.ConsecutiveScrollerLayout>
