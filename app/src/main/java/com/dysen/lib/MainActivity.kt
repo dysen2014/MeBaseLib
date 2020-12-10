@@ -19,6 +19,7 @@ import com.dysen.baselib.widgets.TitleLayout
 import com.dysen.common.base_recycler_adapter.ViewUtils
 import com.dysen.lib.coil_test.CoilTestActivity
 import com.dysen.lib.room_test.RoomTestActy
+import com.dysen.lib.widgets.JProgressViewActy
 import com.google.android.flexbox.FlexboxLayoutManager
 import com.kingja.loadsir.core.LoadService
 import com.kongzue.dialog.util.BaseDialog
@@ -34,8 +35,9 @@ class MainActivity : BaseActivity() {
     private lateinit var mAdapter: MeAdapter<String>
 
     private var menus =
-        mutableListOf("Coil", "扫一扫", "CountryCode", "RoomTest")
-    private var clzzs = mutableListOf<Class<*>>(CoilTestActivity::class.java, CustomScanActivity::class.java, CountryActivity::class.java, RoomTestActy::class.java)
+        mutableListOf("Coil", "扫一扫", "CountryCode", "RoomTest","JProgressView")
+    private var clzzs = mutableListOf<Class<*>>(CoilTestActivity::class.java, CustomScanActivity::class.java, CountryActivity::class.java, RoomTestActy::class.java,
+        JProgressViewActy::class.java)
 
     override fun layoutId(): Int {
         return R.layout.activity_main
@@ -64,7 +66,6 @@ class MainActivity : BaseActivity() {
 //        }
 
         WebUtils.loadUrl(web, "https://wy.kcloudchina.com/app-h5/yzapp/#/userService")
-        Tools.showWebTip(this, "用户协议", "https://wy.kcloudchina.com/app-h5/yzapp/#/userService", "我已阅读并同意")
 
         TitleLayout.title?.text = "测试"
         TitleLayout.rightText?.text = "三"

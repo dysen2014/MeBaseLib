@@ -15,7 +15,7 @@ android {
 
     defaultConfig {
         applicationId "com.dysen.lib"
-        minSdkVersion 21
+        minSdkVersion 26//支持JProgressView 最小26
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -120,4 +120,6 @@ dependencies {
     implementation "androidx.room:room-ktx:2.2.5"
     //这个是为了编译时根据注解生成代码
     kapt 'androidx.room:room-compiler:2.2.5'
+    //https://github.com/hi-dhl/JProgressView
+    implementation 'com.hi-dhl:progressview:1.0.2'
 }
