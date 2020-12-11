@@ -12,6 +12,7 @@ import android.view.WindowManager
 import android.widget.LinearLayout
 import androidx.drawerlayout.widget.DrawerLayout
 
+
 /**
  * @package com.dysen.commom_library.utils
  * @email dy.sen@qq.com
@@ -421,13 +422,17 @@ object StatusBarUtil {
     @TargetApi(Build.VERSION_CODES.KITKAT)
     fun transparentStatusBar(activity: Activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            activity.window
-                .addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+
+            activity.window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
             activity.window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
-            activity.window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION)
+            activity.window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION)
             activity.window.statusBarColor = Color.TRANSPARENT
-        } else {
+        }else{
+
+            // 实现透明状态栏
             activity.window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+            // 实现透明导航栏
+            activity.window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION)
         }
     }
 

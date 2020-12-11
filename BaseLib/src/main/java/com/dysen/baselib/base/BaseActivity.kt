@@ -2,8 +2,10 @@ package com.dysen.baselib.base
 
 import android.app.Activity
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.view.Gravity
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.blankj.utilcode.util.ToastUtils
 import com.dysen.baselib.R

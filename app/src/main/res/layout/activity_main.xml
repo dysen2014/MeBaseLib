@@ -3,55 +3,62 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/match_match_v"
-    tools:context=".MainActivity"
-    app:isPermanent="true">
-<com.dysen.baselib.widgets.TitleLayout
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/dp_48"/>
+    app:isPermanent="true"
+    tools:context=".MainActivity">
 
- <com.me.optionbarview.OptionBarView
-     android:id="@+id/opv"
-     android:layout_width="match_parent"
-     android:layout_height="48dp"
-     app:left_src="@mipmap/ic_launcher_round"
-     app:left_src_height="24dp"
-     app:left_src_width="24dp"
-     app:left_text="leftText"
-     app:right_text="rightText"
-     app:title="title"
-     app:layout_isSticky="true"/>
+    <com.dysen.baselib.widgets.TitleLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48" />
 
- <include layout="@layout/layout_common_line_margin_8"/>
+    <com.me.optionbarview.OptionBarView
+        android:id="@+id/opv"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:layout_isSticky="true"
+        app:left_src="@mipmap/ic_launcher_round"
+        app:left_src_height="24dp"
+        app:left_src_width="24dp"
+        app:left_text="leftText"
+        app:right_text="rightText"
+        app:title="title" />
 
- <com.dysen.baselib.widgets.MeRecyclerView
-     android:id="@+id/rcl_menu"
-     android:layout_width="match_parent"
-     android:layout_height="500dp"
-     android:layout_weight="1"
-     android:layout_marginRight="@dimen/dp_4"
-     app:layout_isConsecutive="false"
-     android:visibility="visible"
-     app:layout_isSticky="true"/>
- <Space
-     android:layout_width="@dimen/w_0"
-     android:layout_height="@dimen/w_20"/>
- <include layout="@layout/activity_coil_test"/>
- <Space
-     android:layout_width="@dimen/w_0"
-     android:layout_height="@dimen/w_20"/>
- <include layout="@layout/activity_country"/>
- <Space
-     android:layout_width="@dimen/w_0"
-     android:layout_height="@dimen/w_20"/>
- <include layout="@layout/activity_custom_scan"/>
+    <include layout="@layout/layout_common_line_margin_8" />
 
- <Space
-     android:layout_width="@dimen/w_0"
-     android:layout_height="@dimen/w_20"/>
+    <com.dysen.baselib.widgets.MeRecyclerView
+        android:id="@+id/rcl_menu"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginRight="@dimen/dp_4"
+        android:layout_weight="1"
+        android:visibility="visible"
+        app:layout_isConsecutive="false"
+        app:layout_isSticky="true" />
 
- <WebView
-     android:id="@+id/web"
-     android:layout_width="match_parent"
-     android:layout_height="300dp"/>
+    <Space
+        android:layout_width="@dimen/w_0"
+        android:layout_height="@dimen/w_20" />
+
+    <include layout="@layout/activity_coil_test" />
+
+    <Space
+        android:layout_width="@dimen/w_0"
+        android:layout_height="@dimen/w_20" />
+
+    <include layout="@layout/activity_country" />
+
+    <Space
+        android:layout_width="@dimen/w_0"
+        android:layout_height="@dimen/w_20" />
+
+    <include layout="@layout/activity_custom_scan" />
+
+    <Space
+        android:layout_width="@dimen/w_0"
+        android:layout_height="@dimen/w_20" />
+
+    <WebView
+        android:id="@+id/web"
+        android:layout_width="match_parent"
+        android:layout_height="300dp" />
 
 </com.donkingliang.consecutivescroller.ConsecutiveScrollerLayout>

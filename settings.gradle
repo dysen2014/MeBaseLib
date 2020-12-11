@@ -1,3 +1,4 @@
+include ':WelcomeLib'
 include ':BaseLib'
 include ':app'
 rootProject.name = "MeBaseLib"

@@ -87,6 +87,9 @@ dependencies {
     implementation 'com.github.dysen2014:MeWidgets:0.0.1'
     //coil
     implementation("io.coil-kt:coil:1.0.0")
+    implementation("io.coil-kt:coil-video:1.1.0")
+    implementation("io.coil-kt:coil-svg:1.1.0")
+    implementation("io.coil-kt:coil-gif:1.1.0")
     //管理界面状态库
     implementation 'com.kingja.loadsir:loadsir:1.3.8'
     //指示器库
@@ -122,4 +125,6 @@ dependencies {
     kapt 'androidx.room:room-compiler:2.2.5'
     //https://github.com/hi-dhl/JProgressView
     implementation 'com.hi-dhl:progressview:1.0.2'
+    //https://github.com/zhpanvip/BannerViewPager
+    implementation 'com.github.zhpanvip:BannerViewPager:3.3.0'
 }
