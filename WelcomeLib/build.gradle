@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.library'
+    id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
@@ -46,6 +46,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     implementation project(path: ':BaseLib')
+//        implementation 'com.github.dysen2014:MeBaseLib:1.0.1'
 
     //https://github.com/zhpanvip/BannerViewPager
     implementation 'com.github.zhpanvip:BannerViewPager:3.3.0'
