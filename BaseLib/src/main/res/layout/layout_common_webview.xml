@@ -21,17 +21,18 @@
                 android:text=""
                 android:visibility="visible" />
 
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="400dp"
-                android:minHeight="400dp"
-                android:visibility="gone">
 
-            </ScrollView>
+            <ProgressBar
+                android:id="@+id/web_progress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/w_0.3"
+                android:max="100"/>
                 <WebView
                     android:id="@+id/web"
                     android:layout_width="match_parent"
-                    android:layout_height="400dp"/>
+                    android:layout_height="400dp"
+                    />
 
 
             <Button

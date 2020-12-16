@@ -22,6 +22,7 @@ import com.blankj.utilcode.util.ToastUtils
 import com.dysen.baselib.R
 import com.dysen.baselib.base.AppContext
 import com.dysen.baselib.common.base_recycler_adapter.MeAdapter
+import com.dysen.baselib.utils.WebUtils.loadUrl
 import com.dysen.baselib.widgets.*
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.EncodeHintType
@@ -632,17 +633,19 @@ object Tools {
         }
     }
 
-    fun showWebTip(aty: AppCompatActivity, title: String, url: String, btnName: String = "好的") {
-        showWebTip(aty, title, url, btnName, null)
+    fun showWebTip(aty: AppCompatActivity, title: String, url: String, btnName: String = "好的")  :CustomDialog{
+        return showWebTip(aty, title, url, btnName, null)
     }
 
-    fun showWebTip(aty: AppCompatActivity, title: String, url: String, btnName: String, rbnReadAndAgree: AppCompatRadioButton?) {
+    fun showWebTip(aty: AppCompatActivity, title: String, url: String, btnName: String, rbnReadAndAgree: AppCompatRadioButton?) :CustomDialog {
         val dialog = CustomDialog.show(aty, R.layout.layout_common_webview) { dialog, v ->
+            val webProgress = v.findViewById<ProgressBar>(R.id.web_progress)
             val web = v.findViewById(R.id.web) as WebView
             val tvSubTitle = v.findViewById<TextView>(R.id.tv_subTitle)
             val btnOk = v.findViewById<Button>(R.id.btn_ok)
+
             tvSubTitle?.text = title
-            WebUtils.loadUrl(web, url)
+            loadUrl(web, url, webProgress)
             btnOk?.text = btnName
             btnOk?.setOnClickListener {
                 rbnReadAndAgree?.isChecked = true
@@ -651,6 +654,7 @@ object Tools {
         }
         dialog.isFullScreen = true
         dialog.cancelable = false
+        return dialog
     }
 
 }

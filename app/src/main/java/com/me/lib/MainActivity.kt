@@ -65,7 +65,9 @@ class MainActivity : BaseActivity() {
 //            mAdapter.setDatas(menus)
 //        }
 
-        WebUtils.loadUrl(web, "https://wy.kcloudchina.com/app-h5/yzapp/#/userService")
+        val url = "http://note.youdao.com/noteshare?id=953e048cbb89940dc03c50c1da8d94e8"
+//        Tools.showWebTip(this,"test",url)
+//        WebUtils.loadUrl(web, "https://wy.kcloudchina.com/app-h5/yzapp/#/userService")
 
         TitleLayout.title?.text = "测试"
         TitleLayout.rightText?.text = "三"
