@@ -31,26 +31,7 @@
         android:layout_marginRight="@dimen/dp_4"
         android:layout_weight="1"
         android:visibility="visible"
-        app:layout_isConsecutive="false"
-        app:layout_isSticky="true" />
-
-    <Space
-        android:layout_width="@dimen/w_0"
-        android:layout_height="@dimen/w_20" />
-
-    <include layout="@layout/activity_coil_test" />
-
-    <Space
-        android:layout_width="@dimen/w_0"
-        android:layout_height="@dimen/w_20" />
-
-    <include layout="@layout/activity_country" />
-
-    <Space
-        android:layout_width="@dimen/w_0"
-        android:layout_height="@dimen/w_20" />
-
-    <include layout="@layout/activity_custom_scan" />
+        app:layout_isConsecutive="false" />
 
     <Space
         android:layout_width="@dimen/w_0"
@@ -60,5 +41,11 @@
         android:id="@+id/web"
         android:layout_width="match_parent"
         android:layout_height="300dp" />
+
+    <Space
+        android:layout_width="@dimen/w_0"
+        android:layout_height="@dimen/w_20" />
+
+    <include layout="@layout/constraintlayout_test"/>
 
 </com.donkingliang.consecutivescroller.ConsecutiveScrollerLayout>

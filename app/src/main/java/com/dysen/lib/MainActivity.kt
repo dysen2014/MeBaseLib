@@ -38,9 +38,8 @@ class MainActivity : BaseActivity() {
     private var clzzs = mutableListOf<Class<*>>(CoilTestActivity::class.java, CustomScanActivity::class.java, CountryActivity::class.java, RoomTestActy::class.java,
         JProgressViewActy::class.java)
 
-    override fun layoutId(): Int {
-        return R.layout.activity_main
-    }
+    override fun layoutId(): Int = R.layout.activity_main
+
 
     override fun initView(savedInstanceState: Bundle?) {
 
@@ -66,7 +65,7 @@ class MainActivity : BaseActivity() {
 
         val url = "http://note.youdao.com/noteshare?id=953e048cbb89940dc03c50c1da8d94e8"
 //        Tools.showWebTip(this,"test",url)
-//        WebUtils.loadUrl(web, "https://wy.kcloudchina.com/app-h5/yzapp/#/userService")
+        WebUtils.loadUrl(web, "https://wy.kcloudchina.com/app-h5/yzapp/#/userService")
 
         TitleLayout.title?.text = "测试"
         TitleLayout.rightText?.text = "三"
