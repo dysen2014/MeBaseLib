@@ -232,4 +232,29 @@
         <item name="android:paddingRight">@dimen/dp_16</item>
         <item name="android:paddingTop">@dimen/dp_16</item>
     </style>
+
+    <style name="w_h">
+        <item name="android:layout_marginBottom">@dimen/dp_16</item>
+        <item name="android:paddingBottom">@dimen/dp_16</item>
+    </style>
+    <style name="w_h_24" parent="w_h">
+        <item name="android:layout_width">@dimen/dp_24</item>
+        <item name="android:layout_height">@dimen/dp_24</item>
+    </style>
+    <style name="w_h_32" parent="w_h">
+        <item name="android:layout_width">@dimen/dp_32</item>
+        <item name="android:layout_height">@dimen/dp_32</item>
+    </style>
+    <style name="w_h_64" parent="w_h">
+        <item name="android:layout_width">@dimen/dp_64</item>
+        <item name="android:layout_height">@dimen/dp_64</item>
+    </style>
+    <style name="w_h_96" parent="w_h">
+        <item name="android:layout_width">@dimen/dp_96</item>
+        <item name="android:layout_height">@dimen/dp_96</item>
+    </style>
+    <style name="w_h_128" parent="w_h">
+        <item name="android:layout_width">@dimen/dp_128</item>
+        <item name="android:layout_height">@dimen/dp_128</item>
+    </style>
 </resources>

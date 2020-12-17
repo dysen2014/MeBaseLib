@@ -296,8 +296,8 @@ object ColorUtil {
      */
     fun randomImage(): String {
         Random().run {
-            val index = nextInt(IMAGE_URL3.size)
-            return IMAGE_URL3[index]
+            val index = nextInt(IMAGE_URL.size)
+            return IMAGE_URL[index]
         }
     }
 

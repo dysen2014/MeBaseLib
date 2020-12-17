@@ -1,12 +1,12 @@
-package com.dysen.lib.room_test
+package com.dysen.baselib.ui.room_test
 
 import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import com.dysen.baselib.R
 import com.dysen.baselib.base.BaseActivity
-import com.dysen.lib.R
 import com.dysen.baselib.ui.room_test.dao.PeopleDao
 import com.dysen.baselib.ui.room_test.dao.UserDao
 import com.dysen.baselib.ui.room_test.database.MeDataBase

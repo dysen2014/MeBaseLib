@@ -1,4 +1,4 @@
-package com.dysen.lib.room_test.dao
+package com.dysen.baselib.ui.room_test.dao
 
 import androidx.room.*
 import com.dysen.baselib.ui.room_test.entity.People

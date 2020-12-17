@@ -8,19 +8,19 @@ import coil.transform.RoundedCornersTransformation
 import com.dysen.baselib.base.BaseActivity
 import com.dysen.baselib.ui.image_paper.BigImagePagerActivity
 import com.dysen.baselib.utils.ColorUtil
+import com.dysen.baselib.widgets.TitleLayout
 import com.dysen.lib.R
 import kotlinx.android.synthetic.main.activity_coil_test.*
 
 class CoilTestActivity : BaseActivity() {
 
-    override fun layoutId(): Int {
-        return R.layout.activity_coil_test
-    }
+    override fun layoutId(): Int = R.layout.activity_coil_test
+
 
     override fun initView(savedInstanceState: Bundle?) {
 //        val imgUrl = "https://cdn.pixabay.com/photo/2020/06/14/22/31/the-caucasus-5299599__480.jpg"
-        tvCoil.text = "Coil Test"
-        tvCoil.isAllCaps = false
+        TitleLayout.title?.text = "Coil Test"
+        TitleLayout.title?.isAllCaps = false
 
 //        val imgUrl = "https://cdn.pixabay.com/photo/2020/10/17/11/55/elephants-5661842_1280.jpg"
         val imgUrl = ColorUtil.randomImage()
@@ -44,6 +44,18 @@ class CoilTestActivity : BaseActivity() {
             crossfade(true)
             placeholder(R.mipmap.ic_launcher)
             transformations(CircleCropTransformation())
+        }
+
+        iv5.load(imgUrl){
+            crossfade(true)
+            placeholder(R.mipmap.ic_launcher)
+            transformations(CircleCropTransformation(),BlurTransformation(this@CoilTestActivity, 10f))
+        }
+
+        iv6.load(imgUrl){
+            crossfade(true)
+            placeholder(R.mipmap.ic_launcher)
+            transformations(BlurTransformation(this@CoilTestActivity, 10f), RoundedCornersTransformation(30f))
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.dysen.lib.room_test.database
+package com.dysen.baselib.ui.room_test.database
 
 import android.content.Context
 import androidx.room.Database
@@ -6,7 +6,6 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.dysen.baselib.ui.room_test.dao.PeopleDao
 import com.dysen.baselib.ui.room_test.dao.UserDao
-import com.dysen.baselib.ui.room_test.database.MeDataBase
 import com.dysen.baselib.ui.room_test.entity.People
 import com.dysen.baselib.ui.room_test.entity.User
 

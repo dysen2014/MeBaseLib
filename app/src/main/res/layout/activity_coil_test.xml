@@ -1,61 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    style="@style/match_match_v"
+    android:gravity="center"
     tools:context=".coil_test.CoilTestActivity">
 
-    <TextView
-        android:id="@+id/tvCoil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <com.dysen.baselib.widgets.TitleLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
-    <ImageView
-        android:id="@+id/iv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+    <com.donkingliang.consecutivescroller.ConsecutiveScrollerLayout
+        style="@style/wrap_match"
+        android:layout_centerInParent="false"
+        app:isPermanent="true"
+        app:layout_isNestedScroll="true">
 
-    <ImageView
-        android:id="@+id/iv2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="220dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        <ImageView
+            android:id="@+id/iv"
+            style="@style/w_h_128"
+            android:cropToPadding="false"
+            tools:srcCompat="@tools:sample/avatars" />
 
-    <ImageView
-        android:id="@+id/iv3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="388dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        <ImageView
+            android:id="@+id/iv2"
+            style="@style/w_h_128"
+            tools:srcCompat="@tools:sample/avatars" />
 
-    <ImageView
-        android:id="@+id/iv4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="564dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/iv3"
+            style="@style/w_h_128"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <ImageView
+            android:id="@+id/iv4"
+            style="@style/w_h_128"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <ImageView
+            android:id="@+id/iv5"
+            style="@style/w_h_128"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <ImageView
+            android:id="@+id/iv6"
+            style="@style/w_h_128"
+            tools:srcCompat="@tools:sample/avatars" />
+    </com.donkingliang.consecutivescroller.ConsecutiveScrollerLayout>
+</LinearLayout>

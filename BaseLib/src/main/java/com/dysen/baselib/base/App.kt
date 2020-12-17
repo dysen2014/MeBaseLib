@@ -6,8 +6,6 @@ import com.dysen.baselib.common.load_callback.ErrorCallback
 import com.dysen.baselib.common.load_callback.LoadingCallback
 import com.kingja.loadsir.callback.SuccessCallback
 import com.kingja.loadsir.core.LoadSir
-import com.me.baselib.common.load_callback.EmptyCallback
-import com.me.baselib.common.load_callback.LoadingCallback
 //import com.tencent.bugly.Bugly
 //import com.tencent.bugly.crashreport.CrashReport
 import com.tencent.mmkv.MMKV

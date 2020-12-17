@@ -27,11 +27,11 @@ import java.util.*
 class WelcomeActivity :BaseActivity(){
     val ANIMATION_DURATION = 1300
     var mDrawableList: MutableList<Int> = ArrayList()
-    private lateinit var mViewPager: BannerViewPager<CustBean, _root_ide_package_.com.dysen.lib.banner.CustomPageViewHolder>
+    private lateinit var mViewPager: BannerViewPager<CustBean, CustomPageViewHolder>
 
     private val des = arrayOf("在这里\n你可以听到周围人的心声", "在这里\nTA会在下一秒遇见你", "在这里\n不再错过可以改变你一生的人")
 
-    private val transforms = intArrayOf(_root_ide_package_.com.dysen.baselib.common.transform.TransformerStyle.NONE, _root_ide_package_.com.dysen.baselib.common.transform.TransformerStyle.ACCORDION,  _root_ide_package_.com.dysen.baselib.common.transform.TransformerStyle.DEPTH, _root_ide_package_.com.dysen.baselib.common.transform.TransformerStyle.ROTATE, _root_ide_package_.com.dysen.baselib.common.transform.TransformerStyle.SCALE_IN)
+    private val transforms = intArrayOf(TransformerStyle.NONE, TransformerStyle.ACCORDION, TransformerStyle.DEPTH,TransformerStyle.ROTATE,TransformerStyle.SCALE_IN)
 
     private val data: List<CustBean>
         get() {
@@ -70,7 +70,7 @@ class WelcomeActivity :BaseActivity(){
         mViewPager = findViewById(R.id.viewpager)
         mViewPager.apply {
             setCanLoop(false)
-            setPageTransformer(_root_ide_package_.com.dysen.baselib.common.transform.PageTransformerFactory.createPageTransformer(transforms[Random().nextInt(5)]))
+            setPageTransformer(PageTransformerFactory.createPageTransformer(transforms[Random().nextInt(5)]))
             setIndicatorMargin(0, 0, 0, resources.getDimension(R.dimen.dp_96).toInt())
             setIndicatorSliderGap(resources.getDimension(R.dimen.w_10).toInt())
             setIndicatorSlideMode(IndicatorSlideMode.SMOOTH)
@@ -83,7 +83,7 @@ class WelcomeActivity :BaseActivity(){
             })
 
             adapter = WelcomeAdapter().apply {
-                mOnSubViewClickListener = _root_ide_package_.com.dysen.lib.banner.CustomPageViewHolder.OnSubViewClickListener { _, position -> showTip("Logo Clicked,position:$position") }
+                mOnSubViewClickListener = CustomPageViewHolder.OnSubViewClickListener { _, position -> showTip("Logo Clicked,position:$position") }
             }
             setIndicatorSliderColor(
                 ContextCompat.getColor(this@WelcomeActivity, R.color.white),

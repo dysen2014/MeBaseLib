@@ -12,16 +12,16 @@ import com.zhpan.bannerview.BaseBannerAdapter
 *
 * Info：
 */
-class WelcomeAdapter : BaseBannerAdapter<CustBean, _root_ide_package_.com.dysen.lib.banner.CustomPageViewHolder>() {
+class WelcomeAdapter : BaseBannerAdapter<CustBean, CustomPageViewHolder>() {
 
-    var mOnSubViewClickListener: _root_ide_package_.com.dysen.lib.banner.CustomPageViewHolder.OnSubViewClickListener? = null
+    var mOnSubViewClickListener: CustomPageViewHolder.OnSubViewClickListener? = null
 
-    override fun onBind(holder: _root_ide_package_.com.dysen.lib.banner.CustomPageViewHolder, data: CustBean, position: Int, pageSize: Int) {
+    override fun onBind(holder: CustomPageViewHolder, data: CustBean, position: Int, pageSize: Int) {
         holder.bindData(data, position, pageSize)
     }
 
-    override fun createViewHolder(parent: ViewGroup, itemView: View, viewType: Int): _root_ide_package_.com.dysen.lib.banner.CustomPageViewHolder? {
-        val customPageViewHolder = _root_ide_package_.com.dysen.lib.banner.CustomPageViewHolder(itemView)
+    override fun createViewHolder(parent: ViewGroup, itemView: View, viewType: Int): CustomPageViewHolder? {
+        val customPageViewHolder = CustomPageViewHolder(itemView)
         customPageViewHolder.setOnSubViewClickListener(mOnSubViewClickListener)
         return customPageViewHolder
     }

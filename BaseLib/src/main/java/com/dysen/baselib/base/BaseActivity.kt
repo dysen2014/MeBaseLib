@@ -2,6 +2,7 @@ package com.dysen.baselib.base
 
 import android.app.Activity
 import android.content.Intent
+import android.content.res.Resources
 import android.os.Build
 import android.os.Bundle
 import android.view.Gravity
@@ -18,6 +19,7 @@ import com.dysen.baselib.utils.Tools
 import com.dysen.baselib.utils.nightMode
 import com.google.zxing.integration.android.IntentIntegrator
 import com.kongzue.dialog.v3.TipDialog
+import me.jessyan.autosize.AutoSizeCompat
 
 /**
  * dysen.
@@ -133,5 +135,13 @@ abstract class BaseActivity : AppActivity() {
             .setTimeout(1000 * 30.toLong()) //默认扫描30S
             .setCaptureActivity(CustomScanActivity::class.java) // 设置自定义的activity是CustomActivity
             .initiateScan() // 初始化扫描
+    }
+
+    /**
+     * 在任何情况下本来适配正常的布局突然出现适配失效，适配异常等问题，只要重写 Activity 的 getResources() 方法
+     */
+    override fun getResources(): Resources {
+        AutoSizeCompat.autoConvertDensityOfGlobal(super.getResources())
+        return super.getResources()
     }
 }
