@@ -11,6 +11,7 @@ import com.dysen.baselib.utils.ColorUtil
 import com.dysen.baselib.widgets.TitleLayout
 import com.dysen.lib.R
 import kotlinx.android.synthetic.main.activity_coil_test.*
+import java.io.File
 
 class CoilTestActivity : BaseActivity() {
 
@@ -32,29 +33,30 @@ class CoilTestActivity : BaseActivity() {
         }
         iv2.load(imgUrl){
             crossfade(false)
-            placeholder(R.mipmap.ic_launcher)
+            placeholder(R.drawable.ic_img_load_before)
             transformations(RoundedCornersTransformation(10f))
         }
         iv3.load(imgUrl){
             crossfade(true)
-            placeholder(R.mipmap.ic_launcher)
+            placeholder(R.drawable.ic_img_load_before)
             transformations(BlurTransformation(this@CoilTestActivity, 10f))
         }
         iv4.load(imgUrl){
             crossfade(true)
-            placeholder(R.mipmap.ic_launcher)
+            placeholder(R.drawable.ic_img_load_before)
             transformations(CircleCropTransformation())
         }
 
-        iv5.load(imgUrl){
+        iv5.load(File("file:///android_asset/meidi.mp4")){
             crossfade(true)
-            placeholder(R.mipmap.ic_launcher)
+            placeholder(R.drawable.ic_img_load_before)
+            error(R.drawable.ic_img_load_failed)
             transformations(CircleCropTransformation(),BlurTransformation(this@CoilTestActivity, 10f))
         }
 
-        iv6.load(imgUrl){
+        iv6.load("https://media.giphy.com/media/l0HlMICf8eLZE8uxG/giphy.gif"){
             crossfade(true)
-            placeholder(R.mipmap.ic_launcher)
+            placeholder(R.drawable.ic_img_load_before)
             transformations(BlurTransformation(this@CoilTestActivity, 10f), RoundedCornersTransformation(30f))
         }
     }
