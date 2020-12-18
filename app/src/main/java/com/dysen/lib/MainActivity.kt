@@ -12,13 +12,13 @@ import com.dysen.baselib.data.Keys
 import com.dysen.baselib.data.entity.CountryData
 import com.dysen.baselib.model.LiveDataManager
 import com.dysen.baselib.ui.country_code.CountryActivity
+import com.dysen.baselib.ui.room_test.RoomTestActy
 import com.dysen.baselib.ui.scan.CustomScanActivity
 import com.dysen.baselib.utils.*
 import com.dysen.baselib.widgets.MeRecyclerView
 import com.dysen.baselib.widgets.TitleLayout
 import com.dysen.common.base_recycler_adapter.ViewUtils
 import com.dysen.lib.coil_test.CoilTestActivity
-import com.dysen.baselib.ui.room_test.RoomTestActy
 import com.dysen.lib.widgets.JProgressViewActy
 import com.google.android.flexbox.FlexboxLayoutManager
 import com.kingja.loadsir.core.LoadService
@@ -26,6 +26,7 @@ import com.kongzue.dialog.util.DialogSettings
 import com.kongzue.dialog.v3.MessageDialog
 import com.me.optionbarview.OptionBarView
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlin.reflect.KParameter
 
 class MainActivity : BaseActivity() {
 
@@ -34,14 +35,20 @@ class MainActivity : BaseActivity() {
     private lateinit var mAdapter: MeAdapter<String>
 
     private var menus =
-        mutableListOf("Coil", "扫一扫", "CountryCode", "RoomTest","JProgressView")
-    private var clzzs = mutableListOf<Class<*>>(CoilTestActivity::class.java, CustomScanActivity::class.java, CountryActivity::class.java, RoomTestActy::class.java,
-        JProgressViewActy::class.java)
+        mutableListOf("Coil", "扫一扫", "CountryCode", "RoomTest", "JProgressView")
+    private var clzzs = mutableListOf<Class<*>>(
+        CoilTestActivity::class.java, CustomScanActivity::class.java, CountryActivity::class.java, RoomTestActy::class.java,
+        JProgressViewActy::class.java
+    )
 
     override fun layoutId(): Int = R.layout.activity_main
 
 
     override fun initView(savedInstanceState: Bundle?) {
+
+        // 判断当前App是否已在保活白名单里
+        AppKeepAlive.requestIgnoreBatteryOptimizations(this)
+
 
 //        val loadsir = LoadSir.Builder().addCallback(LoadingCallback()).addCallback(ErrorCallback()).setDefaultCallback(SuccessCallback::class.java).build()
 

@@ -1,6 +1,7 @@
-package com.dysen.utils
+package com.dysen.baselib.utils
 
 import android.app.Activity
+import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageInfo
@@ -9,9 +10,9 @@ import android.net.Uri
 import android.os.Build
 import android.provider.Settings
 import android.widget.Toast
+import androidx.annotation.NonNull
 import androidx.annotation.RequiresApi
 import androidx.core.content.FileProvider
-import com.dysen.baselib.utils.Tools
 import java.io.File
 import java.io.IOException
 
@@ -23,7 +24,6 @@ import java.io.IOException
  * Info：
  */
 object AppUtils {
-
     @JvmStatic
     fun getPackageInfo(context: Context): PackageInfo {
 
@@ -31,7 +31,7 @@ object AppUtils {
         return pm.getPackageInfo(context.packageName, 0)
     }
 
-    fun getPackageName(context: Context): String? {
+    fun getPackageName(context: Context): String {
         return getPackageInfo(context).packageName
     }
 
@@ -137,7 +137,7 @@ object AppUtils {
             ).show()
             // 调用系统浏览器进入商城
             val url = "http://app.mi.com/detail/163525?ref=search"
-            openLinkBySystem(context,url)
+            openLinkBySystem(context, url)
         }
     }
 
@@ -149,6 +149,24 @@ object AppUtils {
     fun openLinkBySystem(context: Context, url: String) {
         val intent = Intent(Intent.ACTION_VIEW)
         intent.data = Uri.parse(url)
+        context.startActivity(intent)
+    }
+
+    /**
+     * 跳转到指定应用的首页
+     */
+    private fun showActivity(context: Context, @NonNull packageName: String) {
+        val intent: Intent = context.packageManager.getLaunchIntentForPackage(packageName) ?: Intent()
+        context.startActivity(intent)
+    }
+
+    /**
+     * 跳转到指定应用的指定页面
+     */
+    private fun showActivity(context: Context, @NonNull packageName: String, @NonNull activityDir: String) {
+        val intent = Intent()
+        intent.component = ComponentName(packageName, activityDir)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         context.startActivity(intent)
     }
 
