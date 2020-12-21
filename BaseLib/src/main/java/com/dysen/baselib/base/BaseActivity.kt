@@ -18,6 +18,7 @@ import com.dysen.baselib.utils.StatusBarUtil
 import com.dysen.baselib.utils.Tools
 import com.dysen.baselib.utils.nightMode
 import com.google.zxing.integration.android.IntentIntegrator
+import com.kongzue.dialog.v3.MessageDialog
 import com.kongzue.dialog.v3.TipDialog
 import me.jessyan.autosize.AutoSizeCompat
 
@@ -96,6 +97,12 @@ abstract class BaseActivity : AppActivity() {
         duration: Int = 4000
     ): TipDialog {
         return TipDialog.show(this, message, type).setTipTime(duration)
+    }
+    fun showTipMsg(
+        title:String = "",
+        message: String,
+    ): MessageDialog {
+        return MessageDialog.show(this, title, message, "好的")
     }
 
     /**

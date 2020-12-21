@@ -56,10 +56,14 @@ object AppUtils {
         return Build.VERSION.RELEASE
     }
 
-    private fun getHandSetInfo(): String? {
-        return "手机型号:" + Build.MODEL +
-                ",SDK版本:" + Build.VERSION.SDK +
-                ",系统版本:" + Build.VERSION.RELEASE
+    fun getHandSetInfo(): String {
+        return """
+            手机厂商:   ${Build.MANUFACTURER}
+            手机品牌:   ${Build.BRAND}
+            手机型号:   ${Build.MODEL}
+            SDK版本:   ${Build.VERSION.SDK}
+            系统版本:   ${Build.VERSION.RELEASE}
+        """
     }
 
     fun jumpInstall(context: Activity, file1: File, authority: String?, code: Int) {
@@ -83,8 +87,10 @@ object AppUtils {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-            val contentUri = FileProvider.getUriForFile(context,
-                    authority!!, file1)
+            val contentUri = FileProvider.getUriForFile(
+                context,
+                authority!!, file1
+            )
             intent.setDataAndType(contentUri, "application/vnd.android.package-archive")
             //兼容8.0
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -111,8 +117,10 @@ object AppUtils {
     @RequiresApi(api = Build.VERSION_CODES.O)
     private fun startInstallPermissionSettingActivity(context: Activity) {
         //注意这个是8.0新API
-        val intent = Intent(Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES,
-                Uri.parse("package:" + getPackageName(context)))
+        val intent = Intent(
+            Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES,
+            Uri.parse("package:" + getPackageName(context))
+        )
         //intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivityForResult(intent, 0xA1)
     }
@@ -131,9 +139,10 @@ object AppUtils {
         } catch (e: Exception) {
             // 打开应用商店失败 可能是没有手机没有安装应用市场
             e.printStackTrace()
-            Toast.makeText(context,
-                    "打开应用商店失败",
-                    Toast.LENGTH_SHORT
+            Toast.makeText(
+                context,
+                "打开应用商店失败",
+                Toast.LENGTH_SHORT
             ).show()
             // 调用系统浏览器进入商城
             val url = "http://app.mi.com/detail/163525?ref=search"

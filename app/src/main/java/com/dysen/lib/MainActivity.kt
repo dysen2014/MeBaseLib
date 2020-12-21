@@ -1,5 +1,6 @@
 package com.dysen.lib
 
+import android.os.Build
 import android.os.Bundle
 import android.widget.LinearLayout
 import androidx.lifecycle.Observer
@@ -35,10 +36,10 @@ class MainActivity : BaseActivity() {
     private lateinit var mAdapter: MeAdapter<String>
 
     private var menus =
-        mutableListOf("Coil", "扫一扫", "CountryCode", "RoomTest", "JProgressView")
+        mutableListOf("Coil", "扫一扫", "CountryCode", "RoomTest", "JProgressView", "PhoneManufacturer")
     private var clzzs = mutableListOf<Class<*>>(
         CoilTestActivity::class.java, CustomScanActivity::class.java, CountryActivity::class.java, RoomTestActy::class.java,
-        JProgressViewActy::class.java
+        JProgressViewActy::class.java, JProgressViewActy::class.java
     )
 
     override fun layoutId(): Int = R.layout.activity_main
@@ -73,8 +74,8 @@ class MainActivity : BaseActivity() {
         val url = "http://note.youdao.com/noteshare?id=953e048cbb89940dc03c50c1da8d94e8"
 //        Tools.showWebTip(this,"test",url)
         WebUtils.loadUrl(web, "https://wy.kcloudchina.com/app-h5/yzapp/#/userService")
-
-        TitleLayout.title?.text = "测试"
+        showTipMsg("设备数据", message = "${AppUtils.getHandSetInfo()}")
+        TitleLayout.title?.text = "测试   ${Build.BRAND}"
         TitleLayout.rightText?.text = "三"
         LiveDataManager.instance?.with<String>(Keys.SCAN_CONTENT)
             ?.observer(this, Observer {
@@ -155,7 +156,9 @@ class MainActivity : BaseActivity() {
                         if (menus.size == clzzs.size) {
                             if (position == 1 || t == "扫一扫")
                                 customScan(this@MainActivity)
-                            else
+                            else if (position == 5){
+                                PhoneManufacturer.getManufacturer(this@MainActivity)
+                            }else
                                 newInstance(this@MainActivity, clzzs[position])
                         } else
                             showLoading("请保证菜单和页面个数对应！")
