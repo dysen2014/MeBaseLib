@@ -50,16 +50,16 @@ object CacheUtil {
     }
 
     fun isBool(key: String, bl: Boolean = false): Boolean = kv.decodeBool(key, bl)
-    fun setBool(key: String, bl: Boolean) = kv.encode(key, bl)
-    fun gInt(key: String): Int = kv.decodeInt(key)
+    fun sBool(key: String, bl: Boolean) = kv.encode(key, bl)
+    fun gInt(key: String): Int = kv.decodeInt(key, 0)
     fun sInt(key: String, data: Int) = kv.encode(key, data)
-    fun gLong(key: String): Long = kv.decodeLong(key)
+    fun gLong(key: String): Long = kv.decodeLong(key, 0)
     fun sLong(key: String, data: Long) = kv.encode(key, data)
-    fun gFloat(key: String): Float = kv.decodeFloat(key)
+    fun gFloat(key: String): Float = kv.decodeFloat(key, 0.0f)
     fun sFloat(key: String, data: Float) = kv.encode(key, data)
-    fun gDouble(key: String): Double = kv.decodeDouble(key)
+    fun gDouble(key: String): Double = kv.decodeDouble(key, 0.0)
     fun sDouble(key: String, data: Double) = kv.encode(key, data)
-    fun gString(key: String): String = kv.decodeString(key)
+    fun gString(key: String): String = kv.decodeString(key, "")
     fun sString(key: String, data: String) = kv.encode(key, data)
 
 }

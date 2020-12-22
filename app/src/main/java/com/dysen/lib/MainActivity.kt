@@ -19,6 +19,7 @@ import com.dysen.baselib.utils.*
 import com.dysen.baselib.widgets.MeRecyclerView
 import com.dysen.baselib.widgets.TitleLayout
 import com.dysen.common.base_recycler_adapter.ViewUtils
+import com.dysen.baselib.ui.camerax.CameraxActy
 import com.dysen.lib.coil_test.CoilTestActivity
 import com.dysen.lib.widgets.JProgressViewActy
 import com.google.android.flexbox.FlexboxLayoutManager
@@ -27,8 +28,13 @@ import com.kongzue.dialog.util.DialogSettings
 import com.kongzue.dialog.v3.MessageDialog
 import com.me.optionbarview.OptionBarView
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlin.reflect.KParameter
 
+/**
+ * dysen.
+ * dy.sen@qq.com    11/20/20  14:11 PM
+
+ * Info：
+ */
 class MainActivity : BaseActivity() {
 
     //界面状态管理者
@@ -36,10 +42,10 @@ class MainActivity : BaseActivity() {
     private lateinit var mAdapter: MeAdapter<String>
 
     private var menus =
-        mutableListOf("Coil", "扫一扫", "CountryCode", "RoomTest", "JProgressView", "PhoneManufacturer")
+        mutableListOf("Coil", "扫一扫", "CountryCode", "RoomTest", "JProgressView", "PhoneManufacturer", "CameraX")
     private var clzzs = mutableListOf<Class<*>>(
         CoilTestActivity::class.java, CustomScanActivity::class.java, CountryActivity::class.java, RoomTestActy::class.java,
-        JProgressViewActy::class.java, JProgressViewActy::class.java
+        JProgressViewActy::class.java, JProgressViewActy::class.java, CameraxActy::class.java
     )
 
     override fun layoutId(): Int = R.layout.activity_main
@@ -92,6 +98,9 @@ class MainActivity : BaseActivity() {
 
                 showTip("${CacheUtil.gObj(Keys.COUNTRY_CODE, CountryData::class.java)?.name} 选择的内容：${it.code}----$name")
             })
+        LiveDataManager.instance?.with<String>(Keys.TAKE_PHOTO)?.observer(this, {
+            showTipMsg(message = it)
+        })
         initAdapter()
 
         initClick()

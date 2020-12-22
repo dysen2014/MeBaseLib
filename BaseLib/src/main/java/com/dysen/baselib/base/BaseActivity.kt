@@ -21,6 +21,7 @@ import com.google.zxing.integration.android.IntentIntegrator
 import com.kongzue.dialog.v3.MessageDialog
 import com.kongzue.dialog.v3.TipDialog
 import me.jessyan.autosize.AutoSizeCompat
+import java.io.File
 
 /**
  * dysen.
@@ -70,7 +71,7 @@ abstract class BaseActivity : AppActivity() {
             val bgColor = Tools.gColor(if (it) R.color.text_color_green else R.color.text_color_gray2)
             val msgColor = Tools.gColor(if (it) R.color.text_color_white else R.color.text_color_black2)
             lightMode = it
-            nightMode(it,"#7e000000")
+            nightMode(it, "#7e000000")
         })
     }
 
@@ -96,13 +97,19 @@ abstract class BaseActivity : AppActivity() {
         type: TipDialog.TYPE = TipDialog.TYPE.WARNING,
         duration: Int = 4000
     ): TipDialog {
-        return TipDialog.show(this, message, type).setTipTime(duration)
+
+        val dialog = TipDialog.show(this, message, type).setTipTime(duration)
+        dialog.cancelable = false
+        return dialog
     }
+
     fun showTipMsg(
-        title:String = "",
+        title: String = "",
         message: String,
     ): MessageDialog {
-        return MessageDialog.show(this, title, message, "好的")
+        val dialog = MessageDialog.show(this, title, message, "好的")
+        dialog.cancelable = false
+        return dialog
     }
 
     /**
@@ -150,5 +157,13 @@ abstract class BaseActivity : AppActivity() {
     override fun getResources(): Resources {
         AutoSizeCompat.autoConvertDensityOfGlobal(super.getResources())
         return super.getResources()
+    }
+
+    private fun getOutputDirectory(): File {
+        val mediaDir = externalMediaDirs.firstOrNull()?.let {
+            File(it, resources.getString(R.string.app_name)).apply { mkdirs() }
+        }
+        return if (mediaDir != null && mediaDir.exists())
+            mediaDir else filesDir
     }
 }

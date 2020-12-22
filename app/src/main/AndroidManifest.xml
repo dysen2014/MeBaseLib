@@ -2,19 +2,25 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dysen.lib">
 
+    <uses-feature android:name="android.hardware.camera.any" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:name="com.dysen.baselib.base.AppContext"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:networkSecurityConfig="@xml/network_security_config"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".MainActivity"/>
+        <activity android:name="com.dysen.baselib.ui.camerax.CameraxActy"
+            android:theme="@style/FullScreenTheme"/>
+        <activity android:name=".MainActivity" />
         <activity android:name=".widgets.JProgressViewActy" />
         <activity android:name="com.dysen.baselib.ui.room_test.RoomTestActy" />
-        <activity android:name=".banner.WelcomeActivity"
+        <activity
+            android:name=".banner.WelcomeActivity"
             android:theme="@style/FullScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
