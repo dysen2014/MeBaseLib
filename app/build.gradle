@@ -102,7 +102,7 @@ dependencies {
     implementation 'com.github.goweii:RevealLayout:1.1.1'
     //微信开源项目，替代SP
 //    implementation 'com.tencent:mmkv:1.0.22'
-    //轮播图
+    //轮播图   https://github.com/zhpanvip/viewpagerindicator
     implementation 'com.github.zhpanvip:BannerViewPager:2.6.6'
     //瀑布流布局
     implementation 'com.google.android:flexbox:2.0.1'

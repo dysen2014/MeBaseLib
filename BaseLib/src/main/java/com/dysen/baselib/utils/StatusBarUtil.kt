@@ -10,6 +10,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.LinearLayout
+import androidx.annotation.ColorInt
+import androidx.core.graphics.ColorUtils
 import androidx.drawerlayout.widget.DrawerLayout
 
 
@@ -21,6 +23,48 @@ import androidx.drawerlayout.widget.DrawerLayout
  */
 object StatusBarUtil {
     const val DEFAULT_STATUS_BAR_ALPHA = 112
+
+    /**
+     * Android 6.0 以上设置状态栏颜色
+     */
+    fun setStatusBar(activity: Activity, @ColorInt color: Int) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+
+            // 设置状态栏底色颜色
+            activity.window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+            activity.window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+            activity.window.statusBarColor = color
+
+            // 如果亮色，设置状态栏文字为黑色
+            if (isLightColor(color)) {
+                activity.window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+            } else {
+                activity.window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_VISIBLE
+            }
+        }
+    }
+
+    /**
+     * 判断颜色是不是亮色
+     *
+     * @param color
+     * @return
+     * @from https://stackoverflow.com/questions/24260853/check-if-color-is-dark-or-light-in-android
+     */
+    private fun isLightColor(@ColorInt color: Int): Boolean {
+        return ColorUtils.calculateLuminance(color) >= 0.5
+    }
+
+    /**
+     * 获取StatusBar颜色，默认白色
+     *
+     * @return
+     */
+    @ColorInt
+    fun getStatusBarColor(): Int {
+        return Color.WHITE
+    }
+
     /**
      * 设置状态栏颜色
      *
