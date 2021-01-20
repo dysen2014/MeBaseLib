@@ -47,14 +47,14 @@ class CoilTestActivity : BaseActivity() {
             transformations(CircleCropTransformation())
         }
 
-        iv5.load(File("file:///android_asset/meidi.mp4")){
+        iv5.load(File("https://player.vimeo.com/external/328940142.hd.mp4?s=1ea57040d1487a6c9d9ca9ca65763c8972e66bd4&profile_id=172")){
             crossfade(true)
             placeholder(R.drawable.ic_img_load_before)
             error(R.drawable.ic_img_load_failed)
             transformations(CircleCropTransformation(),BlurTransformation(this@CoilTestActivity, 10f))
         }
 
-        iv6.load("https://media.giphy.com/media/l0HlMICf8eLZE8uxG/giphy.gif"){
+        iv6.load("https://player.vimeo.com/external/328940142.hd.mp4?s=1ea57040d1487a6c9d9ca9ca65763c8972e66bd4&profile_id=172"){
             crossfade(true)
             placeholder(R.drawable.ic_img_load_before)
             transformations(BlurTransformation(this@CoilTestActivity, 10f), RoundedCornersTransformation(30f))

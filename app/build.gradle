@@ -96,14 +96,14 @@ dependencies {
     implementation 'com.github.hackware1993:MagicIndicator:1.6.0'
     //官方的
     implementation 'com.google.android:flexbox:2.0.1'
-    //加载webview
+    //加载webview https://github.com/Justson/AgentWeb
     implementation 'com.just.agentweb:agentweb:4.1.2'
     //RevealLayout
     implementation 'com.github.goweii:RevealLayout:1.1.1'
     //微信开源项目，替代SP
 //    implementation 'com.tencent:mmkv:1.0.22'
     //轮播图   https://github.com/zhpanvip/viewpagerindicator
-    implementation 'com.github.zhpanvip:BannerViewPager:2.6.6'
+    implementation 'com.github.zhpanvip:BannerViewPager:3.3.0'
     //瀑布流布局
     implementation 'com.google.android:flexbox:2.0.1'
     //https://github.com/yanzhenjie/SwipeRecyclerView
@@ -125,8 +125,6 @@ dependencies {
     kapt 'androidx.room:room-compiler:2.2.5'
     //https://github.com/hi-dhl/JProgressView
     implementation 'com.hi-dhl:progressview:1.0.2'
-    //https://github.com/zhpanvip/BannerViewPager
-    implementation 'com.github.zhpanvip:BannerViewPager:3.3.0'
 
     def camerax_version = "1.0.0-beta07"
 // CameraX core library using camera2 implementation

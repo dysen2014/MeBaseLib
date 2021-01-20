@@ -44,9 +44,7 @@ object Tools {
     }
 
     fun getTime(date: Date): String { //可根据需要自行截取数据显示
-        Log.d("getTime()", "choice date millis: " + date.time)
-        val format = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
-        return format.format(date)
+        return getTime(date)
     }
 
     fun getTime(date: Date, pattern: String = "yyyy-MM-dd HH:mm:ss"): String { //可根据需要自行截取数据显示
@@ -56,13 +54,11 @@ object Tools {
     }
 
     fun getDate(date: String): Date { //可根据需要自行截取数据显示
-        Log.d("getTime()", "choice date millis: $date")
-        val format = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
-        return format.parse(date)
+        return getDate(date)
     }
 
     fun getDate(date: String, pattern: String = "yyyy-MM-dd HH:mm:ss"): Date { //可根据需要自行截取数据显示
-        Log.d("getTime()", "choice date millis: $date")
+        Log.d("getDate()", "choice date millis: $date")
         val format = SimpleDateFormat(pattern)
         return format.parse(date)
     }
