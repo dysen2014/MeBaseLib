@@ -22,6 +22,7 @@ import com.dysen.common.base_recycler_adapter.ViewUtils
 import com.dysen.baselib.ui.camerax.CameraxActy
 import com.dysen.lib.coil_test.CoilTestActivity
 import com.dysen.lib.widgets.JProgressViewActy
+import com.dysen.lib.widgets.StatusLayoutActy
 import com.google.android.flexbox.FlexboxLayoutManager
 import com.kingja.loadsir.core.LoadService
 import com.kongzue.dialog.util.DialogSettings
@@ -42,10 +43,10 @@ class MainActivity : BaseActivity() {
     private lateinit var mAdapter: MeAdapter<String>
 
     private var menus =
-        mutableListOf("Coil", "扫一扫", "CountryCode", "RoomTest", "JProgressView", "PhoneManufacturer", "CameraX")
+        mutableListOf("Coil", "扫一扫", "CountryCode", "RoomTest", "JProgressView", "PhoneManufacturer", "CameraX", "StatusLayout")
     private var clzzs = mutableListOf<Class<*>>(
         CoilTestActivity::class.java, CustomScanActivity::class.java, CountryActivity::class.java, RoomTestActy::class.java,
-        JProgressViewActy::class.java, JProgressViewActy::class.java, CameraxActy::class.java
+        JProgressViewActy::class.java, JProgressViewActy::class.java, CameraxActy::class.java, StatusLayoutActy::class.java
     )
 
     override fun layoutId(): Int = R.layout.activity_main
