@@ -1,3 +1,4 @@
+include ':MeRxHttp'
 include ':BaseLib'
 include ':app'
 rootProject.name = "MeBaseLib"
