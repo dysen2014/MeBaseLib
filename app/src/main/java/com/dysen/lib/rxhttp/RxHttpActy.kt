@@ -62,5 +62,11 @@ class RxHttpActy : BaseActivity() {
                        showTip(" request error ${it.message}")
         }, {showLoading("请求开始", 30*1000)}, { TipDialog.dismiss(3*1000)})
 
+        rxLifeScope.launch {
+            RxHttp.postForm("")
+                .add("", "")
+                .toBaseResponse<String>()
+                .await()
+        }
     }
 }

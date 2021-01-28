@@ -1,3 +1,4 @@
+include ':MeSpinner'
 include ':MeRxHttp'
 include ':BaseLib'
 include ':app'
