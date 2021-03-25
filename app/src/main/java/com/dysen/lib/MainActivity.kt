@@ -12,6 +12,7 @@ import com.dysen.baselib.data.CacheUtil
 import com.dysen.baselib.data.Keys
 import com.dysen.baselib.data.entity.CountryData
 import com.dysen.baselib.model.LiveDataManager
+import com.dysen.baselib.ui.camerax.CameraxActy
 import com.dysen.baselib.ui.country_code.CountryActivity
 import com.dysen.baselib.ui.room_test.RoomTestActy
 import com.dysen.baselib.ui.scan.CustomScanActivity
@@ -19,7 +20,6 @@ import com.dysen.baselib.utils.*
 import com.dysen.baselib.widgets.MeRecyclerView
 import com.dysen.baselib.widgets.TitleLayout
 import com.dysen.common.base_recycler_adapter.ViewUtils
-import com.dysen.baselib.ui.camerax.CameraxActy
 import com.dysen.lib.coil_test.CoilTestActivity
 import com.dysen.lib.rxhttp.RxHttpActy
 import com.dysen.lib.widgets.JProgressViewActy
@@ -196,4 +196,5 @@ class MainActivity : BaseActivity() {
             adapter = mAdapter
         }
     }
+
 }

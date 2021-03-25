@@ -18,10 +18,13 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.amap.api.location.AMapLocationListener
 import com.blankj.utilcode.util.ToastUtils
 import com.dysen.baselib.R
 import com.dysen.baselib.base.AppContext
 import com.dysen.baselib.common.base_recycler_adapter.MeAdapter
+import com.dysen.baselib.data.CacheUtil
+import com.dysen.baselib.data.Keys
 import com.dysen.baselib.utils.WebUtils.loadUrl
 import com.dysen.baselib.widgets.*
 import com.google.zxing.BarcodeFormat
@@ -31,6 +34,7 @@ import com.google.zxing.qrcode.QRCodeWriter
 import com.kongzue.dialog.util.DialogSettings
 import com.kongzue.dialog.v3.CustomDialog
 import com.kongzue.dialog.v3.TipDialog
+import java.math.BigDecimal
 import java.text.DecimalFormat
 import java.text.SimpleDateFormat
 import java.util.*
@@ -84,12 +88,7 @@ object Tools {
      * 获取非空的text，null或者empty时候可以设置默认值
      * 对content, defaultContent都进行判空操作
      */
-    fun obtainNoNullText(content: String?, @NonNull defaultContent: String?): String? {
-        return if (!TextUtils.isEmpty(content)) content else if (content == null) "--" else if (!TextUtils.isEmpty(
-                defaultContent
-            )
-        ) defaultContent else ""
-    }
+    fun obtainNoNullText(content: String?, @NonNull defaultContent: String?): String? = if (TextUtils.isEmpty(content))"" else content ?: defaultContent
 
     fun toast(): Toast {
         return Toast(app)
@@ -320,13 +319,10 @@ object Tools {
         return TextUtils.isEmpty(str)
     }
 
-    fun showTip(str: String) {
-        ToastUtils.showLong(str)
-//        if (toast == null)
-//            toast = Toast.makeText(app, str, Toast.LENGTH_LONG)
-//
-//        toast.setGravity(Gravity.CENTER,0, 0)
-//        toast.show()
+    fun showTip(str: String?) {
+        ToastUtils.setGravity(Gravity.CENTER, 0, 0)
+        str?.run {
+            ToastUtils.showLong(str)}
     }
 
     fun showTipInput(str: String) {
@@ -653,4 +649,37 @@ object Tools {
         return dialog
     }
 
+    /**
+     * 获取实时定位
+     */
+    fun getLocation(context: Context) {
+        AMapLocationUtils.newLocationClient(context, true, AMapLocationListener { it ->
+            it?.apply {
+                if (errorCode == 0) {
+                    //解析定位结果
+                    LogUtils.i("location addr", "定位地址:${address}")
+//                    positioning = city
+
+                    CacheUtil.sString(Keys.LOCAL_ADDRESS, address)
+                    CacheUtil.sString(Keys.LOCAL_LAT, latitude.toString() + "")
+                    CacheUtil.sString(Keys.LOCAL_LONG, longitude.toString() + "")
+                }
+            }
+        })
+    }
+
+    fun showTip(activity: AppCompatActivity, tip: String, duration: Int = 300, type: TipDialog.TYPE = TipDialog.TYPE.OTHER) {
+        TipDialog.showWait(activity, tip).setTip(type)
+        TipDialog.dismiss(duration)
+    }
+
+    fun checkMoneyValue(str: String?, pattern: String = "0.00"): String = str?.run {
+        "¥${DecimalFormat(pattern).format(BigDecimal(BigDecimalUtils.formatMoney(str)))}"
+    } ?: "¥--"
+
+    fun checkValue(str: String?): String = str ?: "--"
+
+    fun checkValue(str: String?, len: Int): String = str?.run {
+        "${substring(0, len)}..."
+    } ?: "--"
 }
