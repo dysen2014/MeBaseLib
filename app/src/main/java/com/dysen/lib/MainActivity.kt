@@ -37,7 +37,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
  * Info：
  */
-class MainActivity : BaseActivity() {
+class  MainActivity : BaseActivity() {
 
     //界面状态管理者
     private lateinit var loadsirService: LoadService<Any>

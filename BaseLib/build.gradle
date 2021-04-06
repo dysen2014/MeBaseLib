@@ -10,7 +10,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        minSdkVersion 21
+        minSdkVersion 24
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -27,25 +27,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    // Set both the Java and Kotlin compilers to target Java 8.
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
-    buildFeatures {
-        // Enables Jetpack Compose for this module
-//        compose true
-    }
     kotlinOptions {
-        jvmTarget = "1.8"
-        useIR = true
+        jvmTarget = '1.8'
     }
-
-//    composeOptions {
-//        kotlinCompilerVersion '1.4.21'
-//        kotlinCompilerExtensionVersion '1.0.0-alpha10'
-//    }
 
     //忽略lint检查
     lintOptions {
@@ -80,7 +68,8 @@ dependencies {
 
     //zxing
     //https://github.com/journeyapps/zxing-android-embedded
-    implementation 'com.journeyapps:zxing-android-embedded:4.0.2'
+    implementation 'com.journeyapps:zxing-android-embedded:4.2.0'
+
     //dialog
     implementation 'com.kongzue.dialog_v3x:dialog:3.2.3'
     //SmartRefreshLayout
@@ -180,20 +169,6 @@ dependencies {
     implementation 'com.amap.api:location:4.7.2'
     //implementation 'com.amap.api:search:5.0.0'
 
-    //RxHttp
-    implementation 'com.ljx.rxhttp:rxhttp:2.5.2'
-    implementation 'com.squareup.okhttp3:okhttp:4.9.0' //rxhttp v2.2.2版本起，需要手动依赖okhttp
-    kapt 'com.ljx.rxhttp:rxhttp-compiler:2.5.2' //生成RxHttp类，纯Java项目，请使用annotationProcessor代替kapt
-    implementation 'com.ljx.rxlife:rxlife-coroutine:2.0.1' //管理协程生命周期，页面销毁，关闭请求
-    //rxjava3
-    implementation 'io.reactivex.rxjava3:rxjava:3.0.6'
-    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
-    implementation 'com.ljx.rxlife3:rxlife-rxjava:3.0.0' //RxJava3, Automatic close request
-    implementation 'com.ljx.rxhttp:converter-fastjson:2.5.6'
-    implementation 'com.ljx.rxhttp:converter-jackson:2.5.6'
-    implementation 'com.ljx.rxhttp:converter-moshi:2.5.6'
-    implementation 'com.ljx.rxhttp:converter-protobuf:2.5.6'
-    implementation 'com.ljx.rxhttp:converter-simplexml:2.5.6'
 
     //
     implementation 'com.savvi.datepicker:rangepicker:1.3.0'

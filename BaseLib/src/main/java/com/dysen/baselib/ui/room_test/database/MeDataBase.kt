@@ -15,7 +15,7 @@ import com.dysen.baselib.ui.room_test.entity.User
  *
  * Info：
  */
-@Database(entities = [User::class, People::class], version = 1)
+@Database(entities = [User::class, People::class], version = 2)
 abstract class MeDataBase : RoomDatabase() {
     abstract fun userDao(): UserDao
     abstract fun pepleDao(): PeopleDao
