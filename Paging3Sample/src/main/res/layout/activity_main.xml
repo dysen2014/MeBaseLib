@@ -18,8 +18,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline"
         app:layout_constraintVertical_bias="0.473" />
 
-    <com.dysen.baselib.widgets.MeRecyclerView
-        android:id="@+id/rcl"
+    <FrameLayout
         android:layout_width="412dp"
         android:layout_height="684dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -27,7 +26,20 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:layout_constraintVertical_bias="0.007" />
+        app:layout_constraintVertical_bias="0.007">
+
+        <com.dysen.baselib.widgets.MeRecyclerView
+            android:id="@+id/rcl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+    </FrameLayout>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"

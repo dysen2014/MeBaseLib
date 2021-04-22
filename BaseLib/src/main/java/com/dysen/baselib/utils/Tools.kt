@@ -33,7 +33,9 @@ import com.google.zxing.common.BitMatrix
 import com.google.zxing.qrcode.QRCodeWriter
 import com.kongzue.dialog.util.DialogSettings
 import com.kongzue.dialog.v3.CustomDialog
+import com.kongzue.dialog.v3.FullScreenDialog
 import com.kongzue.dialog.v3.TipDialog
+import com.savvi.rangedatepicker.CalendarPickerView
 import java.math.BigDecimal
 import java.text.DecimalFormat
 import java.text.SimpleDateFormat
@@ -682,4 +684,47 @@ object Tools {
     fun checkValue(str: String?, len: Int): String = str?.run {
         "${substring(0, len)}..."
     } ?: "--"
+
+    /**
+     *  选择周期
+     */
+    private fun showCycle(activity: AppCompatActivity): List<Date> {
+        var selectedDates = listOf<Date>()
+        val nextYear = Calendar.getInstance()
+        nextYear.add(Calendar.YEAR, 10)
+
+        val lastYear = Calendar.getInstance()
+        lastYear.add(Calendar.YEAR, -10)
+
+        val dialog = FullScreenDialog.show(activity, R.layout.layout_select_cycle) { dialog, v ->
+            val calendar = v.findViewById(R.id.calendar_view) as CalendarPickerView
+
+            calendar.init(lastYear.time, nextYear.time, SimpleDateFormat("MMMM, YYYY", Locale.getDefault())) //
+//            calendar.init(lastYear.time, nextYear.time, SimpleDateFormat("yyyy-MM-DD HH:mm:ss", Locale.getDefault())) //
+                .inMode(CalendarPickerView.SelectionMode.RANGE) //
+//                    .withDeactivateDates(list)
+//                    .withHighlightedDates(arrayList)
+
+            calendar.scrollToDate(Date())
+
+            dialog.setOkButton("选择") { _, v ->
+                if (calendar.selectedDates.isNotEmpty()) {
+                    val startDate = getTime(calendar.selectedDates.first())
+                    val endDate = getTime(calendar.selectedDates.last())
+
+                    showTip("${startDate}-${endDate}")
+                    LogUtils.i("${startDate}===选择周期====${endDate}")
+                    selectedDates = calendar.selectedDates
+                }
+                false
+            }.setCancelButton("取消") { _, v ->
+                dialog.doDismiss()
+                false
+            }.title = "选择周期"
+        }
+
+//        dialog.isFullScreen = true
+        dialog.cancelable = false
+        return selectedDates
+    }
 }

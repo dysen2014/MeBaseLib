@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/match_match_v">
+    style="@style/match_wrap_v">
 <com.me.optionbarview.OptionBarView
     android:id="@+id/opv1"
     android:layout_width="match_parent"
@@ -15,4 +15,5 @@
     app:left_text_color="@color/text_color_gray"
     app:right_text_color="@color/text_color_gray"
     android:layout_height="@dimen/dp_40"/>
+    <include layout="@layout/layout_common_line_margin_8"/>
 </LinearLayout>

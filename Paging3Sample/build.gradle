@@ -49,6 +49,7 @@ dependencies {
     //MeWidgets
     implementation 'com.github.dysen2014:MeWidgets:0.0.1'
 
+    implementation 'androidx.paging:paging-runtime:3.0.0-beta01'
 
 //    RxHttp
     implementation 'com.ljx.rxhttp:rxhttp:2.5.2'

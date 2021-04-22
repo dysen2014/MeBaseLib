@@ -1,12 +1,11 @@
-package com.dysen.paging3.http
+package com.me.rxhttp.http
 
-import com.dysen.paging3.http.res.Res
 import rxhttp.toClass
 import rxhttp.wrapper.param.RxHttp
 
 /**
  * @author dysen
- * dy.sen@qq.com     3/31/21 9:02 AM
+ * dy.sen@qq.com     4/6/21 9:02 AM
  *
  * Info：
  */
@@ -37,7 +36,6 @@ object Api {
 
     fun get(url:String) = RxHttp.get(url)
 
-    suspend fun getProjects(page: Int = 1, pageSize: Int = 10, url: String = "https://api.github.com/search/repositories?sort=stars&q=Android&per_page=5&page=1") = get(url)
-        .toClass<Res.ProjListsRes>().await()
+    suspend fun getProjects(url:String="https://api.github.com/search/repositories?sort=stars&q=Android&per_page=5&page=1") = get(url).toClass<String>().await()
 
 }

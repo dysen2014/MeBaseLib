@@ -10,9 +10,5 @@ package com.me.rxhttp
 class BaseResponse<T> {
     var code = 0
     var msg : String? = null
-    var data : T
-        get() {
-            TODO()
-        }
-        set(value) {}
+    var data : T?=null
 }

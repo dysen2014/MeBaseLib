@@ -1,6 +1,6 @@
+include ':MeHttp'
 include ':Paging3Sample'
 include ':MeSpinner'
-include ':MeRxHttp'
 include ':BaseLib'
 include ':app'
 rootProject.name = "MeBaseLib"
