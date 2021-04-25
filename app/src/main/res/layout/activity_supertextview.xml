@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.coorchice.library.SuperTextView
+        android:id="@+id/superTextView2"
+        android:layout_width="@dimen/dp_48"
+        android:layout_height="@dimen/dp_48"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.567"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.367"
+        app:stv_isShowState="true"
+        app:stv_state_drawable="@drawable/ic_back"
+        app:stv_state_drawable_mode="center"
+        app:stv_state_drawable_rotate="225"
+        app:stv_state_drawable_tint="@color/gray"/>
+
+    <com.coorchice.library.SuperTextView
+        android:id="@+id/superTextView3"
+        android:layout_width="@dimen/dp_48"
+        android:layout_height="@dimen/dp_48"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.567"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.297"
+        app:stv_isShowState="true"
+        app:stv_state_drawable="@drawable/ic_back"
+        app:stv_state_drawable_mode="center"
+        app:stv_state_drawable_rotate="135"
+        app:stv_state_drawable_tint="@color/yellow" />
+
+    <com.coorchice.library.SuperTextView
+        android:id="@+id/stv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hi sendy bdfb hdf d bhdhb df hdf bdfb hdfb bfd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:stv_state_drawable="@drawable/ic_back"
+        app:stv_state_drawable_rotate="90"
+
+        app:stv_stroke_color="#ffffff"
+        app:stv_stroke_width="8dp"
+
+        app:stv_textShaderEnable="true"
+        app:stv_textShaderEndColor="@color/red"
+        app:stv_textShaderMode="leftToRight"
+        app:stv_textShaderStartColor="@color/blue" />
+
+    <com.coorchice.library.SuperTextView
+        android:id="@+id/superTextView"
+        android:layout_width="@dimen/dp_48"
+        android:layout_height="@dimen/dp_48"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.435"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.367"
+        app:stv_isShowState="true"
+        app:stv_state_drawable="@drawable/ic_back"
+        app:stv_state_drawable_mode="center"
+        app:stv_state_drawable_rotate="315"
+        app:stv_corner="40dp"
+        app:stv_state_drawable_tint="@color/blue"
+        />
+
+    <com.coorchice.library.SuperTextView
+        android:layout_width="@dimen/dp_48"
+        android:layout_height="@dimen/dp_48"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.297"
+        app:stv_isShowState="true"
+        app:stv_state_drawable="@drawable/ic_back"
+        app:stv_state_drawable_mode="center"
+        app:stv_state_drawable_rotate="45"
+        app:stv_stroke_color="#ffffff"
+        app:stv_stroke_width="8dp"
+        app:stv_textShaderEnable="true"
+        app:stv_textShaderEndColor="@color/red"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.50121653" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -87,10 +87,10 @@ dependencies {
     //MeWidgets
     implementation 'com.github.dysen2014:MeWidgets:0.0.1'
     //coil
-    implementation("io.coil-kt:coil:1.0.0")
-    implementation("io.coil-kt:coil-video:1.1.0")
-    implementation("io.coil-kt:coil-svg:1.1.0")
-    implementation("io.coil-kt:coil-gif:1.1.0")
+    implementation("io.coil-kt:coil:1.1.1")
+    implementation("io.coil-kt:coil-video:1.1.1")
+    implementation("io.coil-kt:coil-svg:1.1.1")
+    implementation("io.coil-kt:coil-gif:1.1.1")
     //管理界面状态库
     implementation 'com.kingja.loadsir:loadsir:1.3.8'
     //指示器库
@@ -170,5 +170,5 @@ dependencies {
 
     //
     implementation 'com.savvi.datepicker:rangepicker:1.3.0'
-
+    implementation 'com.github.chenBingX:SuperTextView:v3.2.5.99'
 }
