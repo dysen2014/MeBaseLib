@@ -80,7 +80,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     implementation project(path: ':BaseLib')
-//    implementation project(path: ':MeRxHttp')
+    implementation project(path: ':MeHttp')
 
     //dialog
     implementation 'com.kongzue.dialog_v3x:dialog:3.2.3'

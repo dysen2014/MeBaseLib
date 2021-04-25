@@ -11,4 +11,6 @@ class BaseResponse<T> {
     var code = 0
     var msg : String? = null
     var data : T?=null
+
+    fun isSuccess() = code == 0
 }
