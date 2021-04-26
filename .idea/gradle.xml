@@ -16,6 +16,7 @@
             <option value="$PROJECT_DIR$/MeSpinner" />
             <option value="$PROJECT_DIR$/Paging3Sample" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/meapp" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

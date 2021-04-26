@@ -83,12 +83,14 @@ open class GLiveData<T> {
      */
     inner class MyLifecycleBound : LifecycleEventObserver {
         override fun onStateChanged(source: LifecycleOwner, event: Lifecycle.Event) {
-            if (source.lifecycle.currentState == Lifecycle.State.DESTROYED) {
-                remove(source.lifecycle)
-            }
-            Log.e("TAG-----", "${source.lifecycle.currentState} <<<--->>>${source.javaClass.simpleName}")
-            if (mPendingData != null) {
-                disPatingValue()
+            source?.run {
+                if (source.lifecycle.currentState == Lifecycle.State.DESTROYED) {
+                    remove(source.lifecycle)
+                }
+                Log.e("TAG-----", "${source.lifecycle.currentState} <<<--->>>${source.javaClass.simpleName}")
+                if (mPendingData != null) {
+                    disPatingValue()
+                }
             }
         }
     }
