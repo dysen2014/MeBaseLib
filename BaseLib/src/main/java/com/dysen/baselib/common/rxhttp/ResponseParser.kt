@@ -1,4 +1,4 @@
-package com.dysen.lib.rxhttp
+package com.dysen.baselib.common.rxhttp
 
 import com.google.gson.JsonSyntaxException
 import kotlinx.coroutines.TimeoutCancellationException

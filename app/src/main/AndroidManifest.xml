@@ -11,10 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".video_recorded.VideoInfoActy"/>
-        <activity android:name=".test.SuoerTextviewActy"/>
-        <activity android:name=".rxhttp.RxHttpActy"/>
-        <activity android:name=".widgets.StatusLayoutActy"/>
+        <activity android:name=".test.WebviewActy"></activity>
+        <activity android:name=".video_recorded.VideoInfoActy" />
+        <activity android:name=".test.SuoerTextviewActy" />
+        <activity android:name=".rxhttp.RxHttpActy" />
+        <activity android:name=".widgets.StatusLayoutActy" />
         <activity
             android:name="com.dysen.baselib.ui.camerax.CameraxActy"
             android:theme="@style/FullScreenTheme" />

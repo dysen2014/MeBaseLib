@@ -3,6 +3,8 @@ package com.dysen.lib.rxhttp
 import android.os.Bundle
 import androidx.lifecycle.rxLifeScope
 import com.dysen.baselib.base.BaseActivity
+import com.dysen.baselib.common.rxhttp.BaseResponse
+import com.dysen.baselib.common.rxhttp.ResponseParser
 import com.dysen.baselib.utils.LogUtils
 import com.dysen.lib.R
 import com.kongzue.dialog.v3.TipDialog
@@ -11,7 +13,6 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import rxhttp.*
 import rxhttp.wrapper.param.RxHttp
-import rxhttp.wrapper.param.toBaseResponse
 import java.net.ConnectException
 
 
@@ -55,7 +56,7 @@ class RxHttpActy : BaseActivity() {
         }
         rxLifeScope.launch({
             val str = RxHttp.get("http://kctest.rkpcn.com/complex/patrol/task/page?companyId=16&patrolEndTime=2021-01-22&agent=im&taskType=2&limit=10&page=1&communityId=25&orderField=patrol_start_time&patrolStartTime=2021-01-22&userId=2063052491145217&taskStatus=1&order=asc&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDYzMDUyNDkxMTQ1MjE3IiwiaWF0IjoxNjExMzA0MDU4LCJleHAiOjE2MTEzOTA0NTh9.U-NlpN-5zUHOjbsiBtMIt99-xcppcdYQd9tQ75YFjteLit9e0uom9L14duj0uqTrg9RQAUmns0-JLhfuWtDqlA") //第一步，确定请求方式，可以选择postForm、postJson等方法
-                .toBaseResponse<BaseResponse<String>>()
+                .toClass<BaseResponse<String>>()
             .startDelay(10*1000)
             .await()
                       showTip(str.toString())     }, {
@@ -65,7 +66,7 @@ class RxHttpActy : BaseActivity() {
         rxLifeScope.launch {
             RxHttp.postForm("")
                 .add("", "")
-                .toBaseResponse<String>()
+                .toClass<BaseResponse<String>>()
                 .await()
         }
     }

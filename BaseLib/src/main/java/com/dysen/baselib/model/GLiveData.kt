@@ -16,7 +16,7 @@ open class GLiveData<T> {
     private var mPendingData: T? = null
 
     //观察者的集合
-    private val mObservers: MutableList<ObserverWrapper> = mutableListOf()
+    private var mObservers: MutableList<ObserverWrapper> = mutableListOf()
     private var mVersion = -1
 
     /**

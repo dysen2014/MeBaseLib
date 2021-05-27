@@ -87,51 +87,10 @@ dependencies {
 
     api project(':BaseLib')
     api project(':MeHttp')
-
-    //dialog
-    implementation 'com.kongzue.dialog_v3x:dialog:3.2.3'
-    //MeWidgets
-    implementation 'com.github.dysen2014:MeWidgets:0.0.1'
-    //coil
-    implementation("io.coil-kt:coil:1.2.1")
-    implementation("io.coil-kt:coil-video:1.2.1")
-    implementation("io.coil-kt:coil-svg:1.2.1")
-    implementation("io.coil-kt:coil-gif:1.2.1")
-    //管理界面状态库
-    implementation 'com.kingja.loadsir:loadsir:1.3.8'
     //指示器库
     implementation 'com.github.hackware1993:MagicIndicator:1.6.0'
-    //官方的
-    implementation 'com.google.android:flexbox:2.0.1'
-    //加载webview https://github.com/Justson/AgentWeb
-    implementation 'com.just.agentweb:agentweb:4.1.2'
-    //RevealLayout
-    implementation 'com.github.goweii:RevealLayout:1.1.1'
-    //微信开源项目，替代SP
-//    implementation 'com.tencent:mmkv:1.0.22'
     //轮播图   https://github.com/zhpanvip/viewpagerindicator
     implementation 'com.github.zhpanvip:BannerViewPager:3.3.0'
-    //瀑布流布局
-    implementation 'com.google.android:flexbox:2.0.1'
-    //https://github.com/yanzhenjie/SwipeRecyclerView
-    implementation 'com.yanzhenjie.recyclerview:x:1.3.2'
-    //SmartRefreshLayout
-    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.2'
-
-    //嵌套滑动布局    https://github.com/donkingliang/ConsecutiveScroller
-    implementation 'com.github.donkingliang:ConsecutiveScroller:4.4.0'
-
-    //pdf view
-    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
-    implementation 'es.voghdev.pdfviewpager:library:1.1.1'
-
-    //room
-    implementation 'androidx.room:room-runtime:2.2.5'
-    implementation "androidx.room:room-ktx:2.2.5"
-    //这个是为了编译时根据注解生成代码
-    kapt 'androidx.room:room-compiler:2.2.5'
-    //https://github.com/hi-dhl/JProgressView
-    implementation 'com.hi-dhl:progressview:1.0.2'
 
     def camerax_version = "1.0.0-beta07"
 // CameraX core library using camera2 implementation
@@ -142,19 +101,19 @@ dependencies {
     implementation "androidx.camera:camera-view:1.0.0-alpha14"
 
 //    RxHttp
-    implementation 'com.ljx.rxhttp:rxhttp:2.5.2'
-    implementation 'com.squareup.okhttp3:okhttp:4.9.0' //rxhttp v2.2.2版本起，需要手动依赖okhttp
-    kapt 'com.ljx.rxhttp:rxhttp-compiler:2.5.2' //生成RxHttp类，纯Java项目，请使用annotationProcessor代替kapt
-    implementation 'com.ljx.rxlife:rxlife-coroutine:2.0.1' //管理协程生命周期，页面销毁，关闭请求
-    //rxjava3
-    implementation 'io.reactivex.rxjava3:rxjava:3.0.6'
-    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
-    implementation 'com.ljx.rxlife3:rxlife-rxjava:3.0.0' //RxJava3, Automatic close request
-    implementation 'com.ljx.rxhttp:converter-fastjson:2.5.6'
-    implementation 'com.ljx.rxhttp:converter-jackson:2.5.6'
-    implementation 'com.ljx.rxhttp:converter-moshi:2.5.6'
-    implementation 'com.ljx.rxhttp:converter-protobuf:2.5.6'
-    implementation 'com.ljx.rxhttp:converter-simplexml:2.5.6'
+//    implementation 'com.ljx.rxhttp:rxhttp:2.5.2'
+//    implementation 'com.squareup.okhttp3:okhttp:4.9.0' //rxhttp v2.2.2版本起，需要手动依赖okhttp
+//    kapt 'com.ljx.rxhttp:rxhttp-compiler:2.5.2' //生成RxHttp类，纯Java项目，请使用annotationProcessor代替kapt
+//    implementation 'com.ljx.rxlife:rxlife-coroutine:2.0.1' //管理协程生命周期，页面销毁，关闭请求
+//    //rxjava3
+//    implementation 'io.reactivex.rxjava3:rxjava:3.0.6'
+//    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+//    implementation 'com.ljx.rxlife3:rxlife-rxjava:3.0.0' //RxJava3, Automatic close request
+//    implementation 'com.ljx.rxhttp:converter-fastjson:2.5.6'
+//    implementation 'com.ljx.rxhttp:converter-jackson:2.5.6'
+//    implementation 'com.ljx.rxhttp:converter-moshi:2.5.6'
+//    implementation 'com.ljx.rxhttp:converter-protobuf:2.5.6'
+//    implementation 'com.ljx.rxhttp:converter-simplexml:2.5.6'
 
 
 //添加 Jetpack Compose 工具包依赖项
@@ -174,8 +133,5 @@ dependencies {
 //    // UI Tests
 //    androidTestImplementation 'androidx.compose.ui:ui-test-junit4:1.0.0-alpha10'
 
-    //
-    implementation 'com.savvi.datepicker:rangepicker:1.3.0'
-    implementation 'com.github.chenBingX:SuperTextView:v3.2.5.99'
 
 }

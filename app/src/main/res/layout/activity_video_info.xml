@@ -33,4 +33,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <com.just.agentweb.AgentWebView
+        android:id="@+id/web"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -3,8 +3,9 @@ package com.dysen.lib.video_recorded
 import android.Manifest
 import android.app.Activity
 import android.content.Intent
-import android.media.tv.TvTrackInfo.TYPE_VIDEO
 import android.os.Bundle
+import android.view.ViewGroup
+import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import coil.ImageLoader
 import coil.decode.VideoFrameDecoder
@@ -14,9 +15,11 @@ import coil.load
 import coil.transform.RoundedCornersTransformation
 import com.dysen.baselib.utils.rxRequestPermissions
 import com.dysen.lib.R
+import com.just.agentweb.AgentWeb
 import com.zhaoss.weixinrecorded.activity.RecordedActivity
 import kotlinx.android.synthetic.main.activity_video_info.*
 import java.io.File
+
 
 class VideoInfoActy : AppCompatActivity() {
 
@@ -27,6 +30,13 @@ class VideoInfoActy : AppCompatActivity() {
         mBtnRecord.setOnClickListener {
             rxRequestPermissions(this, Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO, describe = "相机、存储、录音") {
 //                VideoRecordActivity.newInstance(this)
+                var mAgentWeb = AgentWeb.with(this)
+                    .setAgentWebParent(web, ViewGroup.LayoutParams(-1, -1))
+                    .useDefaultIndicator()
+                    .createAgentWeb()
+                    .ready()
+                    .go("http://www.jd.com")
+
 
             }
         }
