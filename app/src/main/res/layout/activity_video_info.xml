@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/match_match_v"
+    android:gravity="center_horizontal">
+
+    <Button
+        android:id="@+id/mBtnRecord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="68dp"
+        android:text="拍摄" />
+    <Button
+        android:id="@+id/mBtnRecord2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="@dimen/dp_32"
+        android:text="拍摄2" />
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="@dimen/dp_128"
+        android:layout_height="@dimen/dp_128"
+        android:layout_marginTop="@dimen/dp_32"/>
+
+    <TextView
+        android:id="@+id/mTvResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

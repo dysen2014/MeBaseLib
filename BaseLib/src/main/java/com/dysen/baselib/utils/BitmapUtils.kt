@@ -183,18 +183,18 @@ object BitmapUtils {
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
             val vectorDrawable = context.getDrawable(vectorDrawableId)
             vectorDrawable?.let {
-                if (it.intrinsicHeight>0 && it.intrinsicWidth>0){
+                if (it.intrinsicHeight > 0 && it.intrinsicWidth > 0) {
 
-                bitmap = Bitmap.createBitmap(
-                    it.intrinsicWidth,
-                    it.intrinsicHeight, Bitmap.Config.ARGB_8888
-                )
-                bitmap?.let { bitmap ->
-                    val canvas = Canvas(bitmap)
-                    it.setBounds(0, 0, canvas.width, canvas.height)
-                    it.draw(canvas)
-                }
-                }else{
+                    bitmap = Bitmap.createBitmap(
+                        it.intrinsicWidth,
+                        it.intrinsicHeight, Bitmap.Config.ARGB_8888
+                    )
+                    bitmap?.let { bitmap ->
+                        val canvas = Canvas(bitmap)
+                        it.setBounds(0, 0, canvas.width, canvas.height)
+                        it.draw(canvas)
+                    }
+                } else {
                     bitmap = BitmapFactory.decodeResource(context.resources, vectorDrawableId)
                 }
             }
@@ -619,4 +619,64 @@ object BitmapUtils {
         return degree
     }
 
+
+    /**
+     * bitmap 转换 uri
+     *
+     * @param context
+     * @param bitmap
+     * @return
+     */
+    fun bitmap2Uri(context: Context, bitmap: Bitmap?): Uri {
+        return Uri.parse(MediaStore.Images.Media.insertImage(context.contentResolver, bitmap, null, null))
+    }
+
+    fun uri2Bitmap(context: Context, uri: Uri?): Bitmap? {
+        var bitmap: Bitmap? = null
+        try {
+            bitmap = MediaStore.Images.Media.getBitmap(context.contentResolver, uri)
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+        return bitmap
+    }
+
+    /**
+     * 在Bitmap中间添加Logo图案
+     */
+    fun addLogo(src: Bitmap?, logo: Bitmap?): Bitmap? {
+        if (src == null) {
+            return null
+        }
+        if (logo == null) {
+            return src
+        }
+        //获取图片的宽高
+        val srcWidth = src.width
+        val srcHeight = src.height
+        val logoWidth = logo.width
+        val logoHeight = logo.height
+        if (srcWidth == 0 || srcHeight == 0) {
+            return null
+        }
+        if (logoWidth == 0 || logoHeight == 0) {
+            return src
+        }
+        //logo大小为二维码整体大小的1/5
+        val scaleFactor = srcWidth * 1.0f / 5 / logoWidth
+        var bitmap = Bitmap.createBitmap(srcWidth, srcHeight, Bitmap.Config.ARGB_4444)
+        try {
+            val canvas = Canvas(bitmap)
+            canvas.drawBitmap(src, 0f, 0f, null)
+            canvas.scale(scaleFactor, scaleFactor, (srcWidth / 2).toFloat(), (srcHeight / 2).toFloat())
+            canvas.drawBitmap(logo, ((srcWidth - logoWidth) / 2).toFloat(), ((srcHeight - logoHeight) / 2).toFloat(), null)
+            //            canvas.save(Canvas.ALL_SAVE_FLAG);
+            canvas.save()
+            canvas.restore()
+        } catch (e: Exception) {
+            bitmap = null
+            e.stackTrace
+        }
+        return bitmap
+    }
 }

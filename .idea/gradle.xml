@@ -17,8 +17,10 @@
             <option value="$PROJECT_DIR$/Paging3Sample" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/meapp" />
+            <option value="$PROJECT_DIR$/wxRecorded" />
           </set>
         </option>
+        <option name="resolveExternalAnnotations" value="false" />
         <option name="resolveModulePerSourceSet" value="false" />
         <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>

@@ -5,6 +5,9 @@ import android.app.Application
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Color
+import android.media.ThumbnailUtils
+import android.net.Uri
+import android.provider.MediaStore
 import android.text.TextUtils
 import android.util.Log
 import android.view.Gravity
@@ -18,6 +21,13 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import coil.ImageLoader
+import coil.decode.VideoFrameDecoder
+import coil.fetch.VideoFrameFileFetcher
+import coil.fetch.VideoFrameUriFetcher
+import coil.load
+import coil.request.videoFrameMillis
+import coil.transform.RoundedCornersTransformation
 import com.amap.api.location.AMapLocationListener
 import com.blankj.utilcode.util.ToastUtils
 import com.dysen.baselib.R
@@ -726,5 +736,38 @@ object Tools {
 //        dialog.isFullScreen = true
         dialog.cancelable = false
         return selectedDates
+    }
+
+    /**
+     * 获取视频的缩略图
+     */
+    fun getTheThumbnail4Video(videoPath: String, widthPix: Int = 600, heightPix: Int = 600): Bitmap {
+        // 获取视频的缩略图
+        var bitmap = ThumbnailUtils.createVideoThumbnail(videoPath, MediaStore.Images.Thumbnails.MICRO_KIND)
+        bitmap = ThumbnailUtils.extractThumbnail(bitmap, widthPix, heightPix, ThumbnailUtils.OPTIONS_RECYCLE_INPUT)
+        return bitmap
+    }
+
+    fun getVideoPlayBitmap(videoPath: String): Bitmap? {
+        // 获取视频的缩略图
+        var bitmap = getTheThumbnail4Video(videoPath)
+        val logoImage = BitmapUtils.getResBitmap(app, R.mipmap.icon_video_play)
+        return BitmapUtils.addLogo(bitmap, logoImage)
+    }
+
+    fun getTheThumbnail4VideoOnline(videoUrl: String, iv_video:ImageView){
+        val imageLoader = ImageLoader.Builder(app)
+            .componentRegistry {
+                add(VideoFrameFileFetcher(app))
+                add(VideoFrameUriFetcher(app))
+                add(VideoFrameDecoder(app))
+            }.build()
+        iv_video.load(Uri.parse(videoUrl),imageLoader){
+            crossfade(true)
+            placeholder(R.mipmap.video_camera)
+            error(R.mipmap.video_thumbnail)
+            videoFrameMillis(1000)
+            transformations(RoundedCornersTransformation(topRight = 10f, topLeft = 10f, bottomLeft =  10f, bottomRight =  10f))
+        }
     }
 }

@@ -33,6 +33,12 @@ android {
                     outputFileName = "Me-${variant.name}-${variant.versionName}_${releaseTime()}.apk"
                 }
         }
+        ndk {
+//            abiFilters "arm64-v8a", "x86", "armeabi-v7a", "x64"
+            //选择要添加的对应cpu类型的.so库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'armeabi-v8a', "x86"
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+        }
     }
 
     signingConfigs {
@@ -79,18 +85,18 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    implementation project(path: ':BaseLib')
-    implementation project(path: ':MeHttp')
+    api project(':BaseLib')
+    api project(':MeHttp')
 
     //dialog
     implementation 'com.kongzue.dialog_v3x:dialog:3.2.3'
     //MeWidgets
     implementation 'com.github.dysen2014:MeWidgets:0.0.1'
     //coil
-    implementation("io.coil-kt:coil:1.1.1")
-    implementation("io.coil-kt:coil-video:1.1.1")
-    implementation("io.coil-kt:coil-svg:1.1.1")
-    implementation("io.coil-kt:coil-gif:1.1.1")
+    implementation("io.coil-kt:coil:1.2.1")
+    implementation("io.coil-kt:coil-video:1.2.1")
+    implementation("io.coil-kt:coil-svg:1.2.1")
+    implementation("io.coil-kt:coil-gif:1.2.1")
     //管理界面状态库
     implementation 'com.kingja.loadsir:loadsir:1.3.8'
     //指示器库
@@ -171,4 +177,5 @@ dependencies {
     //
     implementation 'com.savvi.datepicker:rangepicker:1.3.0'
     implementation 'com.github.chenBingX:SuperTextView:v3.2.5.99'
+
 }

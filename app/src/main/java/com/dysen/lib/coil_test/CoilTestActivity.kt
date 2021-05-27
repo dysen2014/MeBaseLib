@@ -1,14 +1,17 @@
 package com.dysen.lib.coil_test
 
+import android.net.Uri
 import android.os.Build.VERSION.SDK_INT
 import android.os.Bundle
 import coil.ImageLoader
 import coil.decode.GifDecoder
 import coil.decode.ImageDecoderDecoder
 import coil.decode.SvgDecoder
+import coil.decode.VideoFrameDecoder
 import coil.fetch.VideoFrameFileFetcher
 import coil.fetch.VideoFrameUriFetcher
 import coil.load
+import coil.request.videoFrameMillis
 import coil.transform.BlurTransformation
 import coil.transform.CircleCropTransformation
 import coil.transform.RoundedCornersTransformation
@@ -44,7 +47,6 @@ class CoilTestActivity : BaseActivity() {
             transformations(RoundedCornersTransformation(10f))
         }
         iv3.load(imgUrl){
-            crossfade(true)
             placeholder(R.drawable.ic_img_load_before)
             transformations(BlurTransformation(this@CoilTestActivity, 10f))
         }
@@ -62,6 +64,7 @@ class CoilTestActivity : BaseActivity() {
                 //③ 视频帧（仅支持 File 和 Uri）
                 add(VideoFrameFileFetcher(this@CoilTestActivity))
                 add(VideoFrameUriFetcher(this@CoilTestActivity))
+                add(VideoFrameDecoder(this@CoilTestActivity))
             }
             .build()
 
@@ -77,10 +80,12 @@ class CoilTestActivity : BaseActivity() {
 //            transformations(CircleCropTransformation())
         }
 
-        iv6.load("http://www.iqiyi.com/v_19ruv3n460.html",imageLoader){
+        iv6.load(Uri.parse("http://www.iqiyi.com/v_19ruv3n460.html"),imageLoader){
             crossfade(true)
             placeholder(R.drawable.ic_img_load_before)
             error(R.drawable.ic_img_load_failed)
+            videoFrameMillis(1000)
+            transformations(RoundedCornersTransformation(topRight = 10f, topLeft = 10f, bottomLeft =  10f, bottomRight =  10f))
 
 //            transformations(BlurTransformation(this@CoilTestActivity, 10f), RoundedCornersTransformation(30f))
         }
